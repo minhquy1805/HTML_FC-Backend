@@ -1,0 +1,32 @@
+
+version: '3.8'
+
+services:
+  html_fc_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: html_fc_app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - sqlserver
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__Default=Server=sqlserver;Database=FOOTBALLHTMLFC;User=sa;Password=Quypro2003@
+    restart: unless-stopped
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=Quypro2003@
+    ports:
+      - "1433:1433"
+    volumes:
+      - sql_data:/var/opt/mssql
+    restart: unless-stopped
+
+volumes:
+  sql_data:

@@ -1,0 +1,1312 @@
+[
+  {
+    "ContainingType": "HTML_FC.Controllers.CalendarApiController",
+    "Method": "Delete",
+    "RelativePath": "api/v1/CalendarApi/delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.CalendarApiController",
+    "Method": "Insert",
+    "RelativePath": "api/v1/CalendarApi/insert",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "LIBCORE.Models.Calendar",
+        "IsRequired": true
+      },
+      {
+        "Name": "isForListInlineOrListCrud",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.Base.CalendarApiController",
+    "Method": "SelectAll",
+    "RelativePath": "api/v1/CalendarApi/selectall",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[LIBCORE.Models.Calendar, LIBCORE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.Base.CalendarApiController",
+    "Method": "SelectAllDynamicWhereAsync",
+    "RelativePath": "api/v1/CalendarApi/selectalldynamicwhere",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "calendarId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "title",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "eventCalendar",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "calendarTime",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "field1",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "field2",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "field3",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "field4",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "field5",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "createdAt",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "flag",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[LIBCORE.Models.Calendar, LIBCORE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.Base.CalendarApiController",
+    "Method": "SelectByPrimaryKey",
+    "RelativePath": "api/v1/CalendarApi/selectbyprimarykey",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "LIBCORE.Models.Calendar",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.CalendarApiController",
+    "Method": "Update",
+    "RelativePath": "api/v1/CalendarApi/update",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "LIBCORE.Models.Calendar",
+        "IsRequired": true
+      },
+      {
+        "Name": "isForListInlineOrListCrud",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.CertificateApiController",
+    "Method": "Delete",
+    "RelativePath": "api/v1/CertificateApi/delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.CertificateApiController",
+    "Method": "Insert",
+    "RelativePath": "api/v1/CertificateApi/insert",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "certificate",
+        "Type": "LIBCORE.Models.Certificate",
+        "IsRequired": true
+      },
+      {
+        "Name": "isForListInlineOrListCrud",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.Base.CertificateApiController",
+    "Method": "SelectAll",
+    "RelativePath": "api/v1/CertificateApi/selectall",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[LIBCORE.Models.Certificate, LIBCORE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.Base.CertificateApiController",
+    "Method": "SelectAllByCertificateTypeId",
+    "RelativePath": "api/v1/CertificateApi/selectallbycertificateTypeId",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "certificateTypeId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[LIBCORE.Models.Certificate, LIBCORE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.Base.CertificateApiController",
+    "Method": "SelectAllDynamicWhereAsync",
+    "RelativePath": "api/v1/CertificateApi/selectalldynamicwhere",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "certificateId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "certificateTypeId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "title",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "contentCert",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "dateCert",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "signCert",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "reasonCert",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "field1",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "field2",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "field3",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "field4",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "field5",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "flag",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[LIBCORE.Models.Certificate, LIBCORE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.Base.CertificateApiController",
+    "Method": "SelectByPrimaryKey",
+    "RelativePath": "api/v1/CertificateApi/selectbyprimarykey",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "LIBCORE.Models.Certificate",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.CertificateApiController",
+    "Method": "Update",
+    "RelativePath": "api/v1/CertificateApi/update",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "certificate",
+        "Type": "LIBCORE.Models.Certificate",
+        "IsRequired": true
+      },
+      {
+        "Name": "isForListInlineOrListCrud",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.CertificateTypeApiController",
+    "Method": "Delete",
+    "RelativePath": "api/v1/CertificateTypeApi/delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.CertificateTypeApiController",
+    "Method": "Insert",
+    "RelativePath": "api/v1/CertificateTypeApi/insert",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "LIBCORE.Models.CertificateType",
+        "IsRequired": true
+      },
+      {
+        "Name": "isForListInlineOrListCrud",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.Base.CertificateTypeApiController",
+    "Method": "SelectAll",
+    "RelativePath": "api/v1/CertificateTypeApi/selectall",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[LIBCORE.Models.CertificateType, LIBCORE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.Base.CertificateTypeApiController",
+    "Method": "SelectAllDynamicWhereAsync",
+    "RelativePath": "api/v1/CertificateTypeApi/selectalldynamicwhere",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "certificateTypeId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "certificateTitle",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[LIBCORE.Models.CertificateType, LIBCORE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.Base.CertificateTypeApiController",
+    "Method": "SelectByPrimaryKey",
+    "RelativePath": "api/v1/CertificateTypeApi/selectbyprimarykey",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "LIBCORE.Models.CertificateType",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.CertificateTypeApiController",
+    "Method": "Update",
+    "RelativePath": "api/v1/CertificateTypeApi/update",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "LIBCORE.Models.CertificateType",
+        "IsRequired": true
+      },
+      {
+        "Name": "isForListInlineOrListCrud",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.Base.FileController",
+    "Method": "Upload",
+    "RelativePath": "api/v1/FileUpload/File/Upload Multiple File",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "files",
+        "Type": "System.Collections.Generic.List\u00601[[Microsoft.AspNetCore.Http.IFormFile, Microsoft.AspNetCore.Http.Features, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "uploadDirectory",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.Base.FileController",
+    "Method": "Upload",
+    "RelativePath": "api/v1/FileUpload/File/Upload Single Picture",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "uploadDirectory",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.Base.FileController",
+    "Method": "UploadSystemFile",
+    "RelativePath": "api/v1/FileUpload/File/Upload System File",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "projectCode",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.MemberApiController",
+    "Method": "ForgotPassword",
+    "RelativePath": "api/v1/forgot-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.InExpenApiController",
+    "Method": "Delete",
+    "RelativePath": "api/v1/InExpenApi/delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.InExpenApiController",
+    "Method": "Insert",
+    "RelativePath": "api/v1/InExpenApi/insert",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "inExpen",
+        "Type": "LIBCORE.Models.InExpen",
+        "IsRequired": true
+      },
+      {
+        "Name": "isForListInlineOrListCrud",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.Base.InExpenApiController",
+    "Method": "SelectAll",
+    "RelativePath": "api/v1/InExpenApi/selectall",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[LIBCORE.Models.InExpen, LIBCORE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.Base.InExpenApiController",
+    "Method": "SelectAllByMemberId",
+    "RelativePath": "api/v1/InExpenApi/selectallbyMemberId",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "memberId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[LIBCORE.Models.InExpen, LIBCORE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.Base.InExpenApiController",
+    "Method": "SelectAllDynamucWhereAsync",
+    "RelativePath": "api/v1/InExpenApi/selectalldynamicwhere",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "inExpenId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "memberId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "transactionTime",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "moneyValue",
+        "Type": "System.Nullable\u00601[[System.Single, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "createdAt",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "fileAttach",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "field1",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "field2",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "field3",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "field4",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "field5",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "flag",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[LIBCORE.Models.InExpen, LIBCORE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.Base.InExpenApiController",
+    "Method": "SelectByPrimaryKey",
+    "RelativePath": "api/v1/InExpenApi/selectbyprimarykey",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "LIBCORE.Models.InExpen",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.InExpenApiController",
+    "Method": "Update",
+    "RelativePath": "api/v1/InExpenApi/update",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "inExpen",
+        "Type": "LIBCORE.Models.InExpen",
+        "IsRequired": true
+      },
+      {
+        "Name": "isForListInlineOrListCrud",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.MemberApiController",
+    "Method": "LoginAsync",
+    "RelativePath": "api/v1/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "LIBCORE.Models.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.MemberApiController",
+    "Method": "Delete",
+    "RelativePath": "api/v1/MemberApi/delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.MemberApiController",
+    "Method": "Insert",
+    "RelativePath": "api/v1/MemberApi/insert",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "LIBCORE.Models.Member",
+        "IsRequired": true
+      },
+      {
+        "Name": "isForListInlineOrListCrud",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HTML_FC.ApiControllers.MemberApiController",
+    "Method": "SelectAll",
+    "RelativePath": "api/v1/MemberApi/selectall",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[LIBCORE.Models.Member, LIBCORE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HTML_FC.ApiControllers.MemberApiController",
+    "Method": "SelectAllDynamicWhereAsync",
+    "RelativePath": "api/v1/MemberApi/selectalldynamicwhere",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "memberId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "firstName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "middleName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "lastName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "phone",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "facebook",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "address",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "avatar",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "numberPlayer",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "role",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "username",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "field1",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "field2",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "field3",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "field4",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "field5",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "createdAt",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "flag",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[LIBCORE.Models.Member, LIBCORE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HTML_FC.ApiControllers.MemberApiController",
+    "Method": "SelectByPrimaryKey",
+    "RelativePath": "api/v1/MemberApi/selectbyprimarykey",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "LIBCORE.Models.Member",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.MemberApiController",
+    "Method": "Update",
+    "RelativePath": "api/v1/MemberApi/update",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "LIBCORE.Models.Member",
+        "IsRequired": true
+      },
+      {
+        "Name": "isForListInlineOrListCrud",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.NewsApiController",
+    "Method": "Delete",
+    "RelativePath": "api/v1/NewsApi/delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.NewsApiController",
+    "Method": "Insert",
+    "RelativePath": "api/v1/NewsApi/insert",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "LIBCORE.Models.News",
+        "IsRequired": true
+      },
+      {
+        "Name": "isForListInlineOrListCrud",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.Base.NewsApiController",
+    "Method": "SelectAll",
+    "RelativePath": "api/v1/NewsApi/selectall",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[LIBCORE.Models.News, LIBCORE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.Base.NewsApiController",
+    "Method": "SelectAllDynamicWhereAsync",
+    "RelativePath": "api/v1/NewsApi/selectalldynamicwhere",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newsId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "title",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "content",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "image",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "field1",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "field2",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "field3",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "field4",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "field5",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "createdAt",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "flag",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[LIBCORE.Models.News, LIBCORE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.Base.NewsApiController",
+    "Method": "SelectByPrimaryKey",
+    "RelativePath": "api/v1/NewsApi/selectbyprimarykey",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "LIBCORE.Models.News",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.NewsApiController",
+    "Method": "Update",
+    "RelativePath": "api/v1/NewsApi/update",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "LIBCORE.Models.News",
+        "IsRequired": true
+      },
+      {
+        "Name": "isForListInlineOrListCrud",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.MemberApiController",
+    "Method": "ResendVerificationEmail",
+    "RelativePath": "api/v1/resend-email",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.MemberApiController",
+    "Method": "ResetPassword",
+    "RelativePath": "api/v1/reset-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "LIBCORE.Models.ResetPasswordRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.MemberApiController",
+    "Method": "VerifyEmail",
+    "RelativePath": "api/v1/verify-email",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "LIBCORE.Models.VerifyEmailRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

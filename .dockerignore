@@ -1,0 +1,34 @@
+﻿# =========================
+# IGNORE FILES FOR BUILDING DOCKER IMAGE
+# =========================
+
+# 👷 Build folders
+bin/
+obj/
+**/bin/
+**/obj/
+
+# 🧑‍💻 User-specific
+*.user
+*.suo
+
+# 🔐 Sensitive files
+appsettings.json
+appsettings.Development.json
+
+
+# 💻 IDE & Tool folders
+.vscode/
+.idea/
+
+# 🚫 Git
+.git/
+.gitignore
+
+# 🐳 Docker itself
+.dockerignore
+Dockerfile
+
+# 🔄 Logs
+*.log
+logs/

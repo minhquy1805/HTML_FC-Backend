@@ -1,0 +1,221 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\C#\\Football-Team-Dev\\Football-Team-Dev\\Backend\\HTML_FC\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|c:\\c#\\football-team-dev\\football-team-dev\\backend\\html_fc\\libcore\\models\\base\\news.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|solutionrelative:libcore\\models\\base\\news.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|c:\\c#\\football-team-dev\\football-team-dev\\backend\\html_fc\\libcore\\models\\base\\member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|solutionrelative:libcore\\models\\base\\member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|c:\\c#\\football-team-dev\\football-team-dev\\backend\\html_fc\\libcore\\models\\base\\inexpen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|solutionrelative:libcore\\models\\base\\inexpen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|c:\\c#\\football-team-dev\\football-team-dev\\backend\\html_fc\\libcore\\models\\base\\emailsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|solutionrelative:libcore\\models\\base\\emailsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|c:\\c#\\football-team-dev\\football-team-dev\\backend\\html_fc\\libcore\\models\\base\\certificatetype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|solutionrelative:libcore\\models\\base\\certificatetype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|c:\\c#\\football-team-dev\\football-team-dev\\backend\\html_fc\\libcore\\models\\base\\certificate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|solutionrelative:libcore\\models\\base\\certificate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|c:\\c#\\football-team-dev\\football-team-dev\\backend\\html_fc\\libcore\\models\\base\\calendar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|solutionrelative:libcore\\models\\base\\calendar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57F02FB2-08E3-4FEE-818D-BA0E0EDC49DA}|HTML_FC\\HTML_FC.csproj|c:\\c#\\football-team-dev\\football-team-dev\\backend\\html_fc\\html_fc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57F02FB2-08E3-4FEE-818D-BA0E0EDC49DA}|HTML_FC\\HTML_FC.csproj|solutionrelative:html_fc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57F02FB2-08E3-4FEE-818D-BA0E0EDC49DA}|HTML_FC\\HTML_FC.csproj|c:\\c#\\football-team-dev\\football-team-dev\\backend\\html_fc\\html_fc\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{57F02FB2-08E3-4FEE-818D-BA0E0EDC49DA}|HTML_FC\\HTML_FC.csproj|solutionrelative:html_fc\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|c:\\c#\\football-team-dev\\football-team-dev\\backend\\html_fc\\libcore\\datarepository\\base\\memberrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|solutionrelative:libcore\\datarepository\\base\\memberrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|c:\\c#\\football-team-dev\\football-team-dev\\backend\\html_fc\\libcore\\datarepository\\memberrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|solutionrelative:libcore\\datarepository\\memberrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57F02FB2-08E3-4FEE-818D-BA0E0EDC49DA}|HTML_FC\\HTML_FC.csproj|c:\\c#\\football-team-dev\\football-team-dev\\backend\\html_fc\\html_fc\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{57F02FB2-08E3-4FEE-818D-BA0E0EDC49DA}|HTML_FC\\HTML_FC.csproj|solutionrelative:html_fc\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "News.cs",
+              "DocumentMoniker": "C:\\C#\\Football-Team-Dev\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\Models\\Base\\News.cs",
+              "RelativeDocumentMoniker": "LIBCORE\\Models\\Base\\News.cs",
+              "ToolTip": "C:\\C#\\Football-Team-Dev\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\Models\\Base\\News.cs",
+              "RelativeToolTip": "LIBCORE\\Models\\Base\\News.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwC8AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T15:07:21.494Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "InExpen.cs",
+              "DocumentMoniker": "C:\\C#\\Football-Team-Dev\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\Models\\Base\\InExpen.cs",
+              "RelativeDocumentMoniker": "LIBCORE\\Models\\Base\\InExpen.cs",
+              "ToolTip": "C:\\C#\\Football-Team-Dev\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\Models\\Base\\InExpen.cs",
+              "RelativeToolTip": "LIBCORE\\Models\\Base\\InExpen.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T15:06:57.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EmailSettings.cs",
+              "DocumentMoniker": "C:\\C#\\Football-Team-Dev\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\Models\\Base\\EmailSettings.cs",
+              "RelativeDocumentMoniker": "LIBCORE\\Models\\Base\\EmailSettings.cs",
+              "ToolTip": "C:\\C#\\Football-Team-Dev\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\Models\\Base\\EmailSettings.cs",
+              "RelativeToolTip": "LIBCORE\\Models\\Base\\EmailSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T15:06:57.088Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CertificateType.cs",
+              "DocumentMoniker": "C:\\C#\\Football-Team-Dev\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\Models\\Base\\CertificateType.cs",
+              "RelativeDocumentMoniker": "LIBCORE\\Models\\Base\\CertificateType.cs",
+              "ToolTip": "C:\\C#\\Football-Team-Dev\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\Models\\Base\\CertificateType.cs",
+              "RelativeToolTip": "LIBCORE\\Models\\Base\\CertificateType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T15:06:51.437Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Certificate.cs",
+              "DocumentMoniker": "C:\\C#\\Football-Team-Dev\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\Models\\Base\\Certificate.cs",
+              "RelativeDocumentMoniker": "LIBCORE\\Models\\Base\\Certificate.cs",
+              "ToolTip": "C:\\C#\\Football-Team-Dev\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\Models\\Base\\Certificate.cs",
+              "RelativeToolTip": "LIBCORE\\Models\\Base\\Certificate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T15:06:27.576Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Calendar.cs",
+              "DocumentMoniker": "C:\\C#\\Football-Team-Dev\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\Models\\Base\\Calendar.cs",
+              "RelativeDocumentMoniker": "LIBCORE\\Models\\Base\\Calendar.cs",
+              "ToolTip": "C:\\C#\\Football-Team-Dev\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\Models\\Base\\Calendar.cs",
+              "RelativeToolTip": "LIBCORE\\Models\\Base\\Calendar.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T15:06:13.187Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Member.cs",
+              "DocumentMoniker": "C:\\C#\\Football-Team-Dev\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\Models\\Base\\Member.cs",
+              "RelativeDocumentMoniker": "LIBCORE\\Models\\Base\\Member.cs",
+              "ToolTip": "C:\\C#\\Football-Team-Dev\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\Models\\Base\\Member.cs",
+              "RelativeToolTip": "LIBCORE\\Models\\Base\\Member.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAA4wFAAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T14:57:58.328Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\C#\\Football-Team-Dev\\Football-Team-Dev\\Backend\\HTML_FC\\HTML_FC\\Program.cs",
+              "RelativeDocumentMoniker": "HTML_FC\\Program.cs",
+              "ToolTip": "C:\\C#\\Football-Team-Dev\\Football-Team-Dev\\Backend\\HTML_FC\\HTML_FC\\Program.cs",
+              "RelativeToolTip": "HTML_FC\\Program.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAYwD8AAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T10:51:52.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MemberRepository.cs",
+              "DocumentMoniker": "C:\\C#\\Football-Team-Dev\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\DataRepository\\Base\\MemberRepository.cs",
+              "RelativeDocumentMoniker": "LIBCORE\\DataRepository\\Base\\MemberRepository.cs",
+              "ToolTip": "C:\\C#\\Football-Team-Dev\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\DataRepository\\Base\\MemberRepository.cs",
+              "RelativeToolTip": "LIBCORE\\DataRepository\\Base\\MemberRepository.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAgwAsAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T14:34:04.049Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MemberRepository.cs",
+              "DocumentMoniker": "C:\\C#\\Football-Team-Dev\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\DataRepository\\MemberRepository.cs",
+              "RelativeDocumentMoniker": "LIBCORE\\DataRepository\\MemberRepository.cs",
+              "ToolTip": "C:\\C#\\Football-Team-Dev\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\DataRepository\\MemberRepository.cs",
+              "RelativeToolTip": "LIBCORE\\DataRepository\\MemberRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T14:33:59.655Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\C#\\Football-Team-Dev\\Football-Team-Dev\\Backend\\HTML_FC\\HTML_FC\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "HTML_FC\\appsettings.Development.json",
+              "ToolTip": "C:\\C#\\Football-Team-Dev\\Football-Team-Dev\\Backend\\HTML_FC\\HTML_FC\\appsettings.Development.json",
+              "RelativeToolTip": "HTML_FC\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-10T16:51:59.739Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\C#\\Football-Team-Dev\\Football-Team-Dev\\Backend\\HTML_FC\\HTML_FC\\appsettings.json",
+              "RelativeDocumentMoniker": "HTML_FC\\appsettings.json",
+              "ToolTip": "C:\\C#\\Football-Team-Dev\\Football-Team-Dev\\Backend\\HTML_FC\\HTML_FC\\appsettings.json",
+              "RelativeToolTip": "HTML_FC\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAB2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-10T16:39:42.618Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+
+# Bỏ file cấu hình nhạy cảm
+**/appsettings.json
+**/appsettings.Development.json
+
+# .NET build outputs
+bin/
+obj/
+
+# Rider / VSCode settings
+.idea/
+.vscode/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+
+# Database or temp files
+*.db
+*.bak
+
+# Docker artifacts (nếu cần)
+docker-compose.override.yml
+
+# Publish outputs
+**/publish/
+**/wwwroot/

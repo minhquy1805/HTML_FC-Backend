@@ -1,0 +1,31 @@
+name: 🚀 Deploy to GCP VM via SSH
+
+on:
+  push:
+    branches:
+      - main  # Hoặc thay bằng tên branch chính của bạn
+
+jobs:
+  deploy:
+    name: Deploy Backend to GCP VM
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: ⏬ Checkout Source Code
+        uses: actions/checkout@v3
+
+      - name: 🔐 Setup SSH Key
+        uses: webfactory/ssh-agent@v0.7.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: 🌐 SSH into GCP VM and Deploy
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
+            cd ${{ secrets.PROJECT_PATH }}
+            git pull origin main
+            docker-compose down
+            docker-compose up -d --build
+          EOF
+
+

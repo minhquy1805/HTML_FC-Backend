@@ -37,14 +37,61 @@ namespace LIBCORE.DataRepository
             return await this.SelectSharedAsync(storedProcedure, String.Empty, null!, null!, null, null);
         }
 
-        async Task<DataTable> IMemberRepository.SelectAllDynamicWhereAsync(int? memberId, string firstName, string middleName, string lastName, string phone, string email, string facebook, string address, string type, string avatar, int? numberPlayer, string role, string username, string password, string field1, string field2, string field3, string field4, string field5, DateTime? createdAt, string flag)
+        async Task<DataTable> IMemberRepository.SelectAllDynamicWhereAsync(
+            int? memberId,
+            string firstName,
+            string middleName,
+            string lastName,
+            string phone,
+            string email,
+            string facebook,
+            string address,
+            string type,
+            string avatar,
+            int? numberPlayer,
+            string role,
+            string username,
+            string password,
+            string field1,
+            string field2,
+            string field3,
+            string field4,
+            string field5,
+            DateTime? createdAt,
+            string flag,
+            string refreshToken,
+            DateTime? refreshTokenExpiryTime
+        )
         {
             string storedProcName = "[dbo].[Member_SelectAllWhereDynamic]";
             List<SqlParameter> sqlParamList = new();
 
-
-            this.AddSearchCommandParamsShared(sqlParamList, memberId, firstName, middleName, lastName, phone, email, facebook, address, type, avatar, numberPlayer, role, username, password, field1, field2, field3, field4, field5, createdAt, flag);
-
+            this.AddSearchCommandParamsShared(
+                sqlParamList,
+                memberId,
+                firstName,
+                middleName,
+                lastName,
+                phone,
+                email,
+                facebook,
+                address,
+                type,
+                avatar,
+                numberPlayer,
+                role,
+                username,
+                password,
+                field1,
+                field2,
+                field3,
+                field4,
+                field5,
+                createdAt,
+                flag,
+                refreshToken,
+                refreshTokenExpiryTime
+            );
 
             return await DatabaseFunctions.GetDataTableAsync(_connectionString, storedProcName, sqlParamList, _commandType);
         }
@@ -89,25 +136,6 @@ namespace LIBCORE.DataRepository
             return await this.InsertUpdateAsync(member, DatabaseOperationType.Create);
         }
 
-        //async Task IMemberRepository.UpdateAsync(Member member)
-        //{
-        //    // Lấy mật khẩu cũ từ database
-        //    string oldPassword = await GetMemberPasswordById(member.MemberId);
-
-        //    // Nếu người dùng nhập mật khẩu mới thì mã hóa, ngược lại giữ nguyên mật khẩu cũ
-        //    if (!string.IsNullOrEmpty(member.Password))
-        //    {
-        //        member.Password = PasswordHasher.HashPassword(member.Password);
-        //    }
-        //    else
-        //    {
-        //        member.Password = oldPassword;
-        //    }
-
-        //    await this.InsertUpdateAsync(member, DatabaseOperationType.Update);
-        //}
-
-
         async Task IMemberRepository.UpdateAsync(Member member)
         {
             string oldPassword = await GetMemberPasswordById(member.MemberId);
@@ -126,53 +154,6 @@ namespace LIBCORE.DataRepository
 
             await this.InsertUpdateAsync(member, DatabaseOperationType.Update);
         }
-
-        //public async Task<string?> LoginAsync(string username, string password)
-        //{
-        //    string storedProcedure = "[dbo].[Member_Login]";
-        //    List<SqlParameter> sqlParamList = new();
-        //    DatabaseFunctions.AddSqlParameter(sqlParamList, "@username", username);
-
-        //    var dataTable = await DatabaseFunctions.GetDataTableAsync(_connectionString, storedProcedure, sqlParamList, _commandType);
-
-        //    if (dataTable.Rows.Count == 0)
-        //    {
-        //        Console.WriteLine("Không tìm thấy tài khoản: " + username);
-        //        return null;
-        //    }
-
-        //    var row = dataTable.Rows[0];
-
-        //    if (row["Password"] == DBNull.Value || row["Password"] is null)
-        //    {
-        //        Console.WriteLine($"🔴 Lỗi: Tài khoản {username} không có mật khẩu trong DB!");
-        //        return null;
-        //    }
-
-        //    string hashedPassword = row["Password"].ToString()!;
-
-        //    Console.WriteLine("Mật khẩu nhập vào: " + password);
-        //    Console.WriteLine("Mật khẩu từ DB: " + hashedPassword);
-
-        //    // Kiểm tra mật khẩu với BCrypt
-        //    bool isMatch = PasswordHasher.VerifyPassword(password, hashedPassword);
-        //    Console.WriteLine("Kết quả kiểm tra BCrypt: " + isMatch);
-
-        //    if (!isMatch)
-        //    {
-        //        Console.WriteLine("Sai mật khẩu!");
-        //        return null;
-        //    }
-
-        //    int userId = row["MemberId"] != DBNull.Value ? Convert.ToInt32(row["MemberId"]) : 0;
-        //    string role = row["Role"] != DBNull.Value ? row["Role"].ToString()! : "User";
-
-        //    Console.WriteLine($"✅ Đăng nhập thành công! UserId: {userId}, Role: {role}");
-
-        //    // Tạo JWT token
-        //    string token = _jwtTokenGenerator.GenerateToken(userId, username, role);
-        //    return token;
-        //}
 
         private async Task<DataTable> SelectSharedAsync(string storedProcName, string parameterName, object parameterValue, string sortByExpression, int? startRowIndex, int? rows)
         {
@@ -204,6 +185,30 @@ namespace LIBCORE.DataRepository
             var sqlParams = new List<SqlParameter>();
             DatabaseFunctions.AddSqlParameter(sqlParams, "@Email", email);
             return await DatabaseFunctions.GetDataTableAsync(_connectionString, "[dbo].[Member_SelectByEmail]", sqlParams, CommandType.StoredProcedure);
+        }
+
+
+        public async Task UpdateRefreshTokenAsync(int memberId, string? refreshToken, DateTime? expiryTime)
+        {
+            var sqlParams = new List<SqlParameter>
+            {
+                new SqlParameter("@memberId", memberId),
+                new SqlParameter("@refreshToken", (object?)refreshToken ?? DBNull.Value),
+                new SqlParameter("@refreshTokenExpiry", (object?)expiryTime ?? DBNull.Value)
+            };
+
+            await DatabaseFunctions.ExecuteSqlCommandAsync(
+                _connectionString,
+                "[dbo].[Member_UpdateRefreshToken]",
+                sqlParams,
+                CommandType.StoredProcedure,
+                DatabaseOperationType.Update);
+        }
+
+        public async Task RevokeRefreshTokenAsync(int memberId)
+        {
+            // Chỉ cần gọi lại UpdateRefreshTokenAsync với null là xóa được
+            await UpdateRefreshTokenAsync(memberId, null!, null);
         }
 
         private async Task<int> InsertUpdateAsync(Member member, DatabaseOperationType operationType)
@@ -271,6 +276,8 @@ namespace LIBCORE.DataRepository
             DatabaseFunctions.AddSqlParameter(sqlParamList, "@field5", GetDbValue(member.Field5));
             DatabaseFunctions.AddSqlParameter(sqlParamList, "@createdAt", GetDbValue(member.CreatedAt ?? DateTime.Now));
             DatabaseFunctions.AddSqlParameter(sqlParamList, "@flag", GetDbValue(member.Flag));
+            DatabaseFunctions.AddSqlParameter(sqlParamList, "@refreshToken", GetDbValue(member.RefreshToken));
+            DatabaseFunctions.AddSqlParameter(sqlParamList, "@refreshTokenExpiry", GetDbValue(member.RefreshTokenExpiryTime));
 
             if (operationType == DatabaseOperationType.Update)
             {
@@ -284,7 +291,13 @@ namespace LIBCORE.DataRepository
             return newlyCreatedMemberId;
         }
 
-        private void AddSearchCommandParamsShared(List<SqlParameter> sqlParamList, int? memberId, string firstName, string middleName, string lastName, string phone, string email, string facebook, string address, string type, string avatar, int? numberPlayer, string role, string username, string password, string field1, string field2, string field3, string field4, string field5, DateTime? createdAt, string flag)
+        private void AddSearchCommandParamsShared(List<SqlParameter> sqlParamList,
+            int? memberId, string firstName, string middleName, string lastName,
+            string phone, string email, string facebook, string address, string type,
+            string avatar, int? numberPlayer, string role, string username, string password,
+            string field1, string field2, string field3, string field4, string field5,
+            DateTime? createdAt, string flag,
+            string refreshToken, DateTime? refreshTokenExpiryTime) // ✅ thêm ở đây) 
         {
             if (memberId is not null)
                 DatabaseFunctions.AddSqlParameter(sqlParamList, "@memberId", memberId);
@@ -390,6 +403,17 @@ namespace LIBCORE.DataRepository
                 DatabaseFunctions.AddSqlParameter(sqlParamList, "@flag", flag);
             else
                 DatabaseFunctions.AddSqlParameter(sqlParamList, "@flag", System.DBNull.Value);
+
+            if (!string.IsNullOrEmpty(refreshToken))
+                DatabaseFunctions.AddSqlParameter(sqlParamList, "@refreshToken", refreshToken);
+            else
+                DatabaseFunctions.AddSqlParameter(sqlParamList, "@refreshToken", System.DBNull.Value);
+
+            // ✅ Thêm xử lý cho RefreshTokenExpiryTime
+            if (refreshTokenExpiryTime != null)
+                DatabaseFunctions.AddSqlParameter(sqlParamList, "@refreshTokenExpiry", refreshTokenExpiryTime);
+            else
+                DatabaseFunctions.AddSqlParameter(sqlParamList, "@refreshTokenExpiry", System.DBNull.Value);
 
         }
 

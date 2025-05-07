@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\C#\\Football-Team-Dev\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\LIBCORE.csproj": {}
+    "C:\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\LIBCORE.csproj": {}
   },
   "projects": {
-    "C:\\C#\\Football-Team-Dev\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\LIBCORE.csproj": {
+    "C:\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\LIBCORE.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\C#\\Football-Team-Dev\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\LIBCORE.csproj",
+        "projectUniqueName": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\LIBCORE.csproj",
         "projectName": "LIBCORE",
-        "projectPath": "C:\\C#\\Football-Team-Dev\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\LIBCORE.csproj",
+        "projectPath": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\LIBCORE.csproj",
         "packagesPath": "C:\\Users\\minhq\\.nuget\\packages\\",
-        "outputPath": "C:\\C#\\Football-Team-Dev\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\obj\\",
+        "outputPath": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

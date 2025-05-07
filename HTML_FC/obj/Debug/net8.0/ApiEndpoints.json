@@ -1015,6 +1015,16 @@
         "Name": "flag",
         "Type": "System.String",
         "IsRequired": false
+      },
+      {
+        "Name": "refreshToken",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "refreshTokenExpiryTime",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": [
@@ -1257,6 +1267,22 @@
         "Name": "isForListInlineOrListCrud",
         "Type": "System.Boolean",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HTML_FC.Controllers.MemberApiController",
+    "Method": "RefreshToken",
+    "RelativePath": "api/v1/refresh-token",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "LIBCORE.Models.RefreshTokenRequest",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

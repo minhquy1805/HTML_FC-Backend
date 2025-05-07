@@ -2,6 +2,7 @@
 using LIBCORE.Helper;
 using LIBCORE.Models;
 using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
 using System.Data;
 
 namespace LIBCORE.BusinessLayer
@@ -36,11 +37,41 @@ namespace LIBCORE.BusinessLayer
             return this.GetListOfMember(dt);
         }
 
-        public async Task<List<Member>> SelectAllDynamicWhereAsync(int? memberId, string firstName, string middleName, string lastName, string phone, string email, string facebook, string address, string type, string avatar, int? numberPlayer, string role, string username, string password, string field1, string field2, string field3, string field4, string field5, DateTime? createdAt, string flag)
+        public async Task<List<Member>> SelectAllDynamicWhereAsync(
+            int? memberId,
+            string firstName,
+            string middleName,
+            string lastName,
+            string phone,
+            string email,
+            string facebook,
+            string address,
+            string type,
+            string avatar,
+            int? numberPlayer,
+            string role,
+            string username,
+            string password,
+            string field1,
+            string field2,
+            string field3,
+            string field4,
+            string field5,
+            DateTime? createdAt,
+            string flag,
+            string refreshToken,
+            DateTime? refreshTokenExpiryTime
+        )
         {
-            DataTable dt = await _memberRepository.SelectAllDynamicWhereAsync(memberId, firstName, middleName, lastName, phone, email, facebook, address, type, avatar, numberPlayer, role, username, password, field1, field2, field3, field4, field5, createdAt, flag);
+            var dt = await _memberRepository.SelectAllDynamicWhereAsync(
+                memberId, firstName, middleName, lastName, phone, email, facebook,
+                address, type, avatar, numberPlayer, role, username, password,
+                field1, field2, field3, field4, field5, createdAt, flag,
+                refreshToken, refreshTokenExpiryTime
+            );
             return this.GetListOfMember(dt);
         }
+
 
         public async Task<int> InsertAsync(Member member)
         {
@@ -126,21 +157,36 @@ namespace LIBCORE.BusinessLayer
             member.Field4 = null;
             await this.UpdateAsync(member);
 
-            // 🔑 Tạo JWT token
-            string token = _jwtTokenGenerator.GenerateToken(member.MemberId, member.Username!, member.Role!);
+            // 🔑 Tạo Access Token
+            string accessToken = _jwtTokenGenerator.GenerateToken(member.MemberId, member.Username!, member.Role!);
 
-            Console.WriteLine("✅ Đăng nhập thành công! Trả về token.");
-            return token;
+            // 🔁 Tạo Refresh Token
+            string refreshToken = Guid.NewGuid().ToString();
+            DateTime refreshTokenExpiry = DateTime.UtcNow.AddDays(7);
+
+            // ✅ Lưu refresh token vào database
+            await _memberRepository.UpdateRefreshTokenAsync(member.MemberId, refreshToken, refreshTokenExpiry);
+
+            // ✅ Trả về cả access token và refresh token dưới dạng JSON string
+            var result = new
+            {
+                accessToken = accessToken,
+                refreshToken = refreshToken
+            };
+
+            return System.Text.Json.JsonSerializer.Serialize(result);
         }
+
 
         public async Task<bool> VerifyEmailAsync(string email, string inputCode)
         {
             var members = await _memberRepository.SelectAllDynamicWhereAsync(
-                 null, null!, null!, null!, null!, email,
-                 null!, null!, null!, null!, null,
-                 null!, null!, null!, null!, null!,
-                 null!, null!, null!, null!, null!
-             );
+                null, null!, null!, null!, null!, email,
+                null!, null!, null!, null!, null,
+                null!, null!, null!, null!, null!,
+                null!, null!, null!, null!, null!,
+                null!, null! // ✅ thêm 2 tham số: refreshToken, refreshTokenExpiryTime
+            );
 
             if (members.Rows.Count == 0)
                 return false;
@@ -171,11 +217,12 @@ namespace LIBCORE.BusinessLayer
         public async Task<bool> ResendVerificationCodeAsync(string email)
         {
             var members = await _memberRepository.SelectAllDynamicWhereAsync(
-                 null, null!, null!, null!, null!, email,
-                 null!, null!, null!, null!, null,
-                 null!, null!, null!, null!, null!,
-                 null!, null!, null!, null!, null!
-             );
+               null, null!, null!, null!, null!, email,
+               null!, null!, null!, null!, null,
+               null!, null!, null!, null!, null!,
+               null!, null!, null!, null!, null!,
+               null!, null! // ✅ thêm 2 tham số: refreshToken, refreshTokenExpiryTime
+           );
 
             if (members.Rows.Count == 0)
                 return false;
@@ -206,11 +253,12 @@ namespace LIBCORE.BusinessLayer
         public async Task<bool> ResetPasswordAsync(string email, string inputCode, string newPassword)
         {
             var members = await _memberRepository.SelectAllDynamicWhereAsync(
-                null, null!, null!, null!, null!, email,
-                null!, null!, null!, null!, null,
-                null!, null!, null!, null!, null!,
-                null!, null!, null!, null!, null!
-            );
+               null, null!, null!, null!, null!, email,
+               null!, null!, null!, null!, null,
+               null!, null!, null!, null!, null!,
+               null!, null!, null!, null!, null!,
+               null!, null! // ✅ thêm 2 tham số: refreshToken, refreshTokenExpiryTime
+           );
 
             if (members.Rows.Count == 0)
                 return false;
@@ -241,7 +289,8 @@ namespace LIBCORE.BusinessLayer
                 null, null!, null!, null!, null!, email,
                 null!, null!, null!, null!, null,
                 null!, null!, null!, null!, null!,
-                null!, null!, null!, null!, null!
+                null!, null!, null!, null!, null!,
+                null!, null! // ✅ thêm 2 tham số: refreshToken, refreshTokenExpiryTime
             );
 
             if (members.Rows.Count == 0)
@@ -266,6 +315,50 @@ namespace LIBCORE.BusinessLayer
             return true;
         }
 
+        public async Task<string?> RefreshTokenAsync(string refreshToken)
+        {
+            // Tìm người dùng theo refresh token
+            var members = await _memberRepository.SelectAllDynamicWhereAsync(
+                  null, null!, null!, null!, null!, null!,
+                  null!, null!, null!, null!, null,
+                  null!, null!, null!, null!, null!,
+                  null!, null!, null!, null!,
+                  null!,                          
+                  refreshToken!,     
+                  null                
+             );
+
+            if (members.Rows.Count == 0)
+            {
+                Console.WriteLine("❌ Refresh token không hợp lệ.");
+                return null;
+            }
+
+            var member = this.CreateMemberFromDataRow(members.Rows[0]);
+
+            Console.WriteLine("🔁 Token gửi từ client: " + refreshToken);
+            Console.WriteLine("🔁 Token trong DB: " + member.RefreshToken);
+            Console.WriteLine("🔁 Expiry in DB: " + member.RefreshTokenExpiryTime);
+            Console.WriteLine("🔁 Current UTC: " + DateTime.UtcNow);
+
+            // Kiểm tra thời gian hết hạn
+            if (member.RefreshTokenExpiryTime == null || member.RefreshTokenExpiryTime < DateTime.UtcNow)
+            {
+                Console.WriteLine("❌ Refresh token đã hết hạn.");
+                return null;
+            }
+
+            // Tạo access token mới
+            string newAccessToken = _jwtTokenGenerator.GenerateToken(member.MemberId, member.Username!, member.Role!);
+
+            Console.WriteLine("✅ Refresh token hợp lệ. Tạo mới access token.");
+            return newAccessToken;
+        }
+
+        public async Task LogoutAsync(int memberId)
+        {
+            await _memberRepository.RevokeRefreshTokenAsync(memberId);
+        }
 
         private List<Member> GetListOfMember(DataTable dt)
         {
@@ -381,6 +474,17 @@ namespace LIBCORE.BusinessLayer
                 member.Field5 = dr["Field5"].ToString();
             else
                 member.Field5 = null;
+
+
+            if (dr["RefreshToken"] != System.DBNull.Value)
+                member.RefreshToken = dr["RefreshToken"].ToString();
+            else
+                member.RefreshToken = null;
+
+            if (dr["RefreshTokenExpiry"] != System.DBNull.Value)
+                member.RefreshTokenExpiryTime = (DateTime)dr["RefreshTokenExpiry"];
+            else
+                member.RefreshTokenExpiryTime = null;
 
             if (dr["CreatedAt"] != System.DBNull.Value)
                 member.CreatedAt = (DateTime)dr["CreatedAt"];

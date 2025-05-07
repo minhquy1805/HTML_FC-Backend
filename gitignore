@@ -30,3 +30,5 @@ docker-compose.override.yml
 # Publish outputs
 **/publish/
 **/wwwroot/
+
+.vs/

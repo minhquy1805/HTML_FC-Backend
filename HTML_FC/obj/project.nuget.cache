@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "e9jEw4MyDRA=",
+  "dgSpecHash": "SCr5Y0GDF10=",
   "success": true,
-  "projectFilePath": "C:\\C#\\Football-Team-Dev\\Football-Team-Dev\\Backend\\HTML_FC\\HTML_FC\\HTML_FC.csproj",
+  "projectFilePath": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\HTML_FC\\HTML_FC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\minhq\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\minhq\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

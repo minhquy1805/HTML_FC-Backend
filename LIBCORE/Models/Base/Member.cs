@@ -59,6 +59,12 @@ namespace LIBCORE.Models
         [Display(Name = "Password")]
         public string? Password { get; set; }
 
+        [Display(Name = "Refresh Token")]
+        public string? RefreshToken { get; set; }
+
+        [Display(Name = "Refresh Token Expiry Time")]
+        public DateTime? RefreshTokenExpiryTime { get; set; }
+
         [Display(Name = "Field1")]
         public string? Field1 { get; set; }
 
@@ -70,10 +76,10 @@ namespace LIBCORE.Models
         [Display(Name = "Field3")]
         public string? Field3 { get; set; }
 
-        [Display(Name = "Field3")]
+        [Display(Name = "Field4")]
         public string? Field4 { get; set; }
 
-        [Display(Name = "Field3")]
+        [Display(Name = "Field5")]
         public string? Field5 { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-ddTHH:mm:ss}", ApplyFormatInEditMode = true)]

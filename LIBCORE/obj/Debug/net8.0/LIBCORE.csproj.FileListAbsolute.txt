@@ -34,3 +34,16 @@ C:\C#\Football-Team-Dev\Football-Team-Dev\Backend\HTML_FC\LIBCORE\obj\Debug\net8
 C:\C#\Football-Team-Dev\Football-Team-Dev\Backend\HTML_FC\LIBCORE\obj\Debug\net8.0\refint\LIBCORE.dll
 C:\C#\Football-Team-Dev\Football-Team-Dev\Backend\HTML_FC\LIBCORE\obj\Debug\net8.0\LIBCORE.pdb
 C:\C#\Football-Team-Dev\Football-Team-Dev\Backend\HTML_FC\LIBCORE\obj\Debug\net8.0\ref\LIBCORE.dll
+C:\Football-Team-Dev\Backend\HTML_FC\LIBCORE\bin\Debug\net8.0\LIBCORE.deps.json
+C:\Football-Team-Dev\Backend\HTML_FC\LIBCORE\bin\Debug\net8.0\LIBCORE.dll
+C:\Football-Team-Dev\Backend\HTML_FC\LIBCORE\bin\Debug\net8.0\LIBCORE.pdb
+C:\Football-Team-Dev\Backend\HTML_FC\LIBCORE\obj\Debug\net8.0\LIBCORE.csproj.AssemblyReference.cache
+C:\Football-Team-Dev\Backend\HTML_FC\LIBCORE\obj\Debug\net8.0\LIBCORE.GeneratedMSBuildEditorConfig.editorconfig
+C:\Football-Team-Dev\Backend\HTML_FC\LIBCORE\obj\Debug\net8.0\LIBCORE.AssemblyInfoInputs.cache
+C:\Football-Team-Dev\Backend\HTML_FC\LIBCORE\obj\Debug\net8.0\LIBCORE.AssemblyInfo.cs
+C:\Football-Team-Dev\Backend\HTML_FC\LIBCORE\obj\Debug\net8.0\LIBCORE.csproj.CoreCompileInputs.cache
+C:\Football-Team-Dev\Backend\HTML_FC\LIBCORE\obj\Debug\net8.0\LIBCORE.sourcelink.json
+C:\Football-Team-Dev\Backend\HTML_FC\LIBCORE\obj\Debug\net8.0\LIBCORE.dll
+C:\Football-Team-Dev\Backend\HTML_FC\LIBCORE\obj\Debug\net8.0\refint\LIBCORE.dll
+C:\Football-Team-Dev\Backend\HTML_FC\LIBCORE\obj\Debug\net8.0\LIBCORE.pdb
+C:\Football-Team-Dev\Backend\HTML_FC\LIBCORE\obj\Debug\net8.0\ref\LIBCORE.dll

@@ -4,6 +4,7 @@ using LIBCORE.BusinessLayer;
 using LIBCORE.Models;
 using LIBCORE.Domain;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace HTML_FC.Controllers
 {
@@ -46,7 +47,7 @@ namespace HTML_FC.Controllers
             }
         }
 
-        [Authorize(Roles = "User")]
+        [Authorize(Roles = "Admin,User")]
         [Route("[controller]/update")]
         [HttpPost]
         public async Task<IActionResult> Update([FromBody] Member model, bool isForListInlineOrListCrud = false)
@@ -88,16 +89,40 @@ namespace HTML_FC.Controllers
                 return BadRequest(new { message = "Username and password are required" });
             }
 
-            string? token = await _MemberBusinessLayer.LoginAsync(request.Username, request.Password);
+            string? jsonResult = await _MemberBusinessLayer.LoginAsync(request.Username, request.Password);
 
-            if (token == null)
+            if (jsonResult == null)
             {
                 Console.WriteLine("❌ Sai username hoặc password!");
                 return Unauthorized(new { message = "Invalid username or password" });
             }
 
-            Console.WriteLine("✅ Đăng nhập thành công! Trả về token.");
-            return Ok(new { token });
+            // ✅ Parse chuỗi JSON trả về từ BusinessLayer
+            var tokens = System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, string>>(jsonResult);
+
+            Console.WriteLine("✅ Đăng nhập thành công! Trả về token và refresh token.");
+            return Ok(tokens); // Trả về { token: "...", refreshToken: "..." }
+        }
+
+
+        [HttpPost("refresh-token")]
+        public async Task<IActionResult> RefreshToken([FromBody] RefreshTokenRequest request)
+        {
+            if (string.IsNullOrEmpty(request.RefreshToken))
+            {
+                return BadRequest(new { message = "Missing refresh token" });
+            }
+
+            string? newAccessToken = await _MemberBusinessLayer.RefreshTokenAsync(request.RefreshToken);
+
+          
+
+            if (newAccessToken == null)
+            {
+                return Unauthorized(new { message = "Refresh token is invalid or expired" });
+            }
+
+            return Ok(new { accessToken = newAccessToken });
         }
 
         [HttpPost("verify-email")]
@@ -139,6 +164,18 @@ namespace HTML_FC.Controllers
             var success = await _MemberBusinessLayer.ResetPasswordAsync(request.Email, request.Code, request.NewPassword);
             if (!success) return BadRequest("Mã không đúng hoặc đã hết hạn.");
             return Ok("Mật khẩu đã được cập nhật thành công.");
+        }
+
+        [Authorize(Roles = "Admin,User")]
+        [HttpPost("logout")]
+        public async Task<IActionResult> Logout()
+        {
+            var idClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (!int.TryParse(idClaim, out var memberId))
+                return BadRequest(new { message = "Invalid token" });
+
+            await _MemberBusinessLayer.LogoutAsync(memberId);
+            return Ok(new { message = "Logged out successfully" });
         }
 
         private async Task<IActionResult> AddEditAsync(Member model, CrudOperation operation, bool isForListInlineOrListCrud = false)

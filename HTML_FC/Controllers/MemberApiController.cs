@@ -89,7 +89,7 @@ namespace HTML_FC.Controllers
                 return BadRequest(new { message = "Username and password are required" });
             }
 
-            string? jsonResult = await _MemberBusinessLayer.LoginAsync(request.Username, request.Password);
+            string? jsonResult = await _MemberBusinessLayer.LoginAsync(request.Username, request.Password, request.DeviceInfo!);
 
             if (jsonResult == null)
             {
@@ -113,7 +113,7 @@ namespace HTML_FC.Controllers
                 return BadRequest(new { message = "Missing refresh token" });
             }
 
-            string? newAccessToken = await _MemberBusinessLayer.RefreshTokenAsync(request.RefreshToken);
+            string? newAccessToken = await _MemberBusinessLayer.RefreshTokenAsync(request.RefreshToken, request.DeviceInfo!);
 
           
 

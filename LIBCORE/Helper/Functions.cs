@@ -5,6 +5,7 @@ using LIBCORE.BusinessLayer;
 using LIBCORE.DataRepository;
 using LIBCORE.Domain;
 using LIBCORE.Models;
+using Microsoft.DotNet.Scaffolding.Shared;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace LIBCORE.Helper
@@ -57,6 +58,7 @@ namespace LIBCORE.Helper
             services.AddScoped<Calendar>();
             services.AddScoped<InExpen>();
             services.AddScoped<EmailService>();
+            services.AddScoped<MemberRefreshToken>();
         }
         public static void AddDataRepositoryAndBusinessLayerServices(IServiceCollection services, string connectionString)
         {
@@ -76,6 +78,8 @@ namespace LIBCORE.Helper
             services.AddScoped<ICertificateRepository>(provider => new CertificateRepository(connectionString));
             services.AddScoped<ICalendarRepository>(provider => new CalendarRepository(connectionString));
             services.AddScoped<IInExpenRepository>(provider => new InExpenRepository(connectionString));
+            services.AddScoped<IMemberRefreshTokenRepository>(provider => new MemberRefreshTokensRepository(connectionString));
+            services.AddScoped<IMemberRefreshTokensBusinessLayer, MemberRefreshTokensBusinessLayer>();
 
             // Đăng ký Business Layers
             services.AddScoped<IMemberBusinessLayer>(provider =>
@@ -83,7 +87,8 @@ namespace LIBCORE.Helper
                 var memberRepository = provider.GetRequiredService<IMemberRepository>();
                 var jwtTokenGenerator = provider.GetRequiredService<JwtTokenGenerator>();
                 var emailService = provider.GetRequiredService<EmailService>();
-                return new MemberBusinessLayer(memberRepository, jwtTokenGenerator, emailService);
+                var memberRefreshTokensBusinessLayer = provider.GetRequiredService<IMemberRefreshTokensBusinessLayer>();
+                return new MemberBusinessLayer(memberRepository, jwtTokenGenerator, emailService, memberRefreshTokensBusinessLayer);
             });
 
             services.AddScoped<INewsBusinessLayer>(provider =>

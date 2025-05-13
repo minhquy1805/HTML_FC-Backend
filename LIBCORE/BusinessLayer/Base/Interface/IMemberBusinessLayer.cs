@@ -43,7 +43,7 @@ namespace LIBCORE.BusinessLayer
         public Task UpdateAsync(Member member);
 
         // Thêm phương thức đăng nhập để trả về token
-        public Task<string?> LoginAsync(string username, string password);
+        public Task<string?> LoginAsync(string username, string password, string deviceInfo);
 
         public Task<bool> VerifyEmailAsync(string email, string inputCode);
 
@@ -53,7 +53,7 @@ namespace LIBCORE.BusinessLayer
 
         public Task<bool> ResetPasswordAsync(string email, string inputCode, string newPassword);
 
-        public Task<string?> RefreshTokenAsync(string refreshToken);
+        public Task<string?> RefreshTokenAsync(string refreshToken, string deviceInfo);
 
         public Task LogoutAsync(int memberId);
     }

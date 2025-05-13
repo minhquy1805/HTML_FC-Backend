@@ -3,6 +3,7 @@ using LIBCORE.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 
 namespace HTML_FC.ApiControllers
 {
@@ -12,11 +13,13 @@ namespace HTML_FC.ApiControllers
     {
         private Member _member;
         private readonly IMemberBusinessLayer _memberBusinessLayer;
+        private readonly IMemberRefreshTokensBusinessLayer _memberRefreshTokensBusinessLayer;
 
-        public MemberApiController(Member member,IMemberBusinessLayer memberBusinessLayer)
+        public MemberApiController(Member member,IMemberBusinessLayer memberBusinessLayer, IMemberRefreshTokensBusinessLayer memberRefreshTokensBusinessLayer)
         {
             _member = member;
             _memberBusinessLayer = memberBusinessLayer;
+            _memberRefreshTokensBusinessLayer = memberRefreshTokensBusinessLayer;
         }
 
         [Authorize(Roles = "Admin,User")]
@@ -96,6 +99,32 @@ namespace HTML_FC.ApiControllers
             );
 
             return members;
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpGet("devices")]
+        public async Task<IActionResult> GetAllDevices([FromQuery] int memberId)
+        {
+            if (memberId <= 0)
+                return BadRequest(new { message = "memberId là bắt buộc." });
+
+            var dt = await _memberRefreshTokensBusinessLayer.SelectByMemberIdAsync(memberId);
+
+            if (dt.Rows.Count == 0)
+                return NotFound(new { message = "Không có thiết bị nào." });
+
+            var devices = dt.AsEnumerable()
+                .Select(row => new
+                {
+                    memberRefreshTokensId = row["MemberRefreshTokensId"],
+                    deviceInfo = row["DeviceInfo"]?.ToString(),
+                    refreshToken = row["RefreshToken"]?.ToString(),
+                    refreshTokenExpiry = row["RefreshTokenExpiry"]?.ToString(),
+                    createdAt = row["CreatedAt"]?.ToString(),
+                    flag = row["Flag"]?.ToString()
+                }).ToList();
+
+            return Ok(devices);
         }
     }
 }

@@ -41,10 +41,10 @@ namespace LIBCORE.Models
         [Display(Name = "Field3")]
         public string? Field3 { get; set; }
 
-        [Display(Name = "Field3")]
+        [Display(Name = "Field4")]
         public string? Field4 { get; set; }
 
-        [Display(Name = "Field3")]
+        [Display(Name = "Field5")]
         public string? Field5 { get; set; }
 
 

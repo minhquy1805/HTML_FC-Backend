@@ -1,8 +1,10 @@
-﻿using LIBCORE.DataRepository;
+﻿using Docker.DotNet.Models;
+using LIBCORE.DataRepository;
 using LIBCORE.Helper;
 using LIBCORE.Models;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
+using System.Composition;
 using System.Data;
 
 namespace LIBCORE.BusinessLayer
@@ -12,12 +14,14 @@ namespace LIBCORE.BusinessLayer
         private readonly IMemberRepository _memberRepository;
         private readonly JwtTokenGenerator _jwtTokenGenerator;
         private readonly EmailService emailService;
+        private readonly IMemberRefreshTokensBusinessLayer _memberRefreshTokensBusinessLayer;
 
-        public MemberBusinessLayer(IMemberRepository memberRepository, JwtTokenGenerator jwtTokenGenerator, EmailService emailService)
+        public MemberBusinessLayer(IMemberRepository memberRepository, JwtTokenGenerator jwtTokenGenerator, EmailService emailService, IMemberRefreshTokensBusinessLayer memberRefreshTokensBusinessLayer)
         {
             _memberRepository = memberRepository;
             _jwtTokenGenerator = jwtTokenGenerator;
             this.emailService = emailService;
+            _memberRefreshTokensBusinessLayer = memberRefreshTokensBusinessLayer;
         }
 
         public async Task<Member> SelectByPrimaryKeyAsync(int memberId)
@@ -105,7 +109,7 @@ namespace LIBCORE.BusinessLayer
         }
 
         // --------------------- THÊM LOGIN --------------------- 
-        public async Task<string?> LoginAsync(string username, string password)
+        public async Task<string?> LoginAsync(string username, string password, string deviceInfo)
         {
             // Tìm thành viên theo username
             DataTable dt = await _memberRepository.SelectByUsernameAsync(username);
@@ -166,6 +170,17 @@ namespace LIBCORE.BusinessLayer
 
             // ✅ Lưu refresh token vào database
             await _memberRepository.UpdateRefreshTokenAsync(member.MemberId, refreshToken, refreshTokenExpiry);
+
+            // ➕ Lưu vào bảng MemberRefreshTokens
+            await _memberRefreshTokensBusinessLayer.InsertAsync(new MemberRefreshToken
+            {
+                MemberId = member.MemberId,
+                RefreshToken = refreshToken,
+                RefreshTokenExpiry = refreshTokenExpiry,
+                DeviceInfo = deviceInfo,
+                CreatedAt = DateTime.UtcNow,
+                Flag = "A"
+            });
 
             // ✅ Trả về cả access token và refresh token dưới dạng JSON string
             var result = new
@@ -315,43 +330,48 @@ namespace LIBCORE.BusinessLayer
             return true;
         }
 
-        public async Task<string?> RefreshTokenAsync(string refreshToken)
+        public async Task<string?> RefreshTokenAsync(string refreshToken, string deviceInfo)
         {
-            // Tìm người dùng theo refresh token
-            var members = await _memberRepository.SelectAllDynamicWhereAsync(
-                  null, null!, null!, null!, null!, null!,
-                  null!, null!, null!, null!, null,
-                  null!, null!, null!, null!, null!,
-                  null!, null!, null!, null!,
-                  null!,                          
-                  refreshToken!,     
-                  null                
-             );
+            // Lấy token từ bảng MemberRefreshTokens
+            var tokens = await _memberRefreshTokensBusinessLayer.SelectByRefreshTokenAsync(refreshToken);
 
-            if (members.Rows.Count == 0)
+            if (tokens.Rows.Count == 0)
             {
-                Console.WriteLine("❌ Refresh token không hợp lệ.");
+                Console.WriteLine("❌ Refresh token không tồn tại.");
                 return null;
             }
 
-            var member = this.CreateMemberFromDataRow(members.Rows[0]);
+            var row = tokens.Rows[0];
 
-            Console.WriteLine("🔁 Token gửi từ client: " + refreshToken);
-            Console.WriteLine("🔁 Token trong DB: " + member.RefreshToken);
-            Console.WriteLine("🔁 Expiry in DB: " + member.RefreshTokenExpiryTime);
-            Console.WriteLine("🔁 Current UTC: " + DateTime.UtcNow);
+            // Nếu cần kiểm tra đúng device
+            if (!string.IsNullOrEmpty(deviceInfo) && row["DeviceInfo"]?.ToString() != deviceInfo)
+            {
+                Console.WriteLine("❌ DeviceInfo không khớp.");
+                return null;
+            }
 
-            // Kiểm tra thời gian hết hạn
-            if (member.RefreshTokenExpiryTime == null || member.RefreshTokenExpiryTime < DateTime.UtcNow)
+            int memberId = Convert.ToInt32(row["MemberId"]);
+            DateTime expiry = Convert.ToDateTime(row["RefreshTokenExpiry"]);
+
+            if (expiry < DateTime.UtcNow)
             {
                 Console.WriteLine("❌ Refresh token đã hết hạn.");
                 return null;
             }
 
-            // Tạo access token mới
-            string newAccessToken = _jwtTokenGenerator.GenerateToken(member.MemberId, member.Username!, member.Role!);
+            // Lấy thông tin member từ bảng Member
+            var memberData = await _memberRepository.SelectByPrimaryKeyAsync(memberId);
+            if (memberData.Rows.Count == 0)
+            {
+                Console.WriteLine("❌ Không tìm thấy thành viên.");
+                return null;
+            }
 
-            Console.WriteLine("✅ Refresh token hợp lệ. Tạo mới access token.");
+            var member = CreateMemberFromDataRow(memberData.Rows[0]);
+
+            // Tạo mới access token
+            string newAccessToken = _jwtTokenGenerator.GenerateToken(member.MemberId, member.Username!, member.Role!);
+            Console.WriteLine("✅ Tạo mới access token từ bảng MemberRefreshTokens.");
             return newAccessToken;
         }
 

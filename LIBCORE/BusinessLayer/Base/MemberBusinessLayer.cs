@@ -100,6 +100,12 @@ namespace LIBCORE.BusinessLayer
 
         public async Task UpdateAsync(Member member)
         {
+            // Nếu mật khẩu mới được nhập mà chưa được hash
+            if (!string.IsNullOrEmpty(member.Password) && !PasswordHasher.IsHashed(member.Password))
+            {
+                member.Password = PasswordHasher.HashPassword(member.Password);
+            }
+
             await _memberRepository.UpdateAsync(member);
         }
 
@@ -290,7 +296,8 @@ namespace LIBCORE.BusinessLayer
 
             // Cập nhật mật khẩu mới
             var member = this.CreateMemberFromDataRow(row);
-            member.Password = newPassword;
+            // ✅ Cập nhật mật khẩu mới (HASH trước khi gửi repo)
+            member.Password = PasswordHasher.HashPassword(newPassword);
             member.Field3 = null; // xoá mã
             member.Field4 = null; // xoá thời gian
 

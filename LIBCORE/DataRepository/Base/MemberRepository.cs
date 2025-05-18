@@ -211,51 +211,32 @@ namespace LIBCORE.DataRepository
             await UpdateRefreshTokenAsync(memberId, null!, null);
         }
 
+        // ✅ Refactored MemberRepository to remove password hashing from Repository Layer
+        // Hashing should be handled in Business Layer only
+
         private async Task<int> InsertUpdateAsync(Member member, DatabaseOperationType operationType)
         {
             if (operationType == DatabaseOperationType.RetrieveDataTable || operationType == DatabaseOperationType.Delete)
-                throw new ArgumentException("Invalid DatabaseOperationType!  Acceptable operation types are: Create or Update only.", "operationType: " + operationType.ToString());
+                throw new ArgumentException("Invalid DatabaseOperationType! Acceptable operation types are: Create or Update only.", "operationType: " + operationType.ToString());
 
             List<SqlParameter> sqlParamList = new();
 
             int newlyCreatedMemberId = member.MemberId;
 
-            string storedProcedure;
+            string storedProcedure = operationType == DatabaseOperationType.Update
+                ? "[dbo].[Member_Update]"
+                : "[dbo].[Member_Insert]";
 
-            if (operationType == DatabaseOperationType.Update)
-                storedProcedure = "[dbo].[Member_Update]";
-            else
-                storedProcedure = "[dbo].[Member_Insert]";
+            // ✅ NO password hashing here, all logic should be handled by Business Layer
 
-            // Nếu là Create, mã hóa mật khẩu trước khi lưu
-            if (operationType == DatabaseOperationType.Create)
-            {
-                if (!string.IsNullOrEmpty(member.Password))
-                {
-                    member.Password = PasswordHasher.HashPassword(member.Password);
-                }
-            }
-            else if (operationType == DatabaseOperationType.Update)
-            {
-                // Nếu mật khẩu mới không nhập, giữ nguyên mật khẩu cũ từ database
-                string oldPassword = await GetMemberPasswordById(member.MemberId);
-                if (string.IsNullOrEmpty(member.Password))
-                {
-                    member.Password = oldPassword;
-                }
-                else if (member.Password != oldPassword)
-                {
-                    member.Password = PasswordHasher.HashPassword(member.Password);
-                }
-            }
-
-            // Xử lý DBNull gọn hơn bằng phương thức tiện ích
+            // Handle DBNull conversion
             object GetDbValue<T>(T value) => string.IsNullOrEmpty(value?.ToString()) ? DBNull.Value : value!;
 
             if (operationType == DatabaseOperationType.Update)
             {
                 DatabaseFunctions.AddSqlParameter(sqlParamList, "@memberId", GetDbValue(member.MemberId));
             }
+
             DatabaseFunctions.AddSqlParameter(sqlParamList, "@firstName", GetDbValue(member.FirstName));
             DatabaseFunctions.AddSqlParameter(sqlParamList, "@middleName", GetDbValue(member.MiddleName));
             DatabaseFunctions.AddSqlParameter(sqlParamList, "@lastName", GetDbValue(member.LastName));
@@ -268,7 +249,7 @@ namespace LIBCORE.DataRepository
             DatabaseFunctions.AddSqlParameter(sqlParamList, "@numberPlayer", GetDbValue(member.NumberPlayer));
             DatabaseFunctions.AddSqlParameter(sqlParamList, "@role", GetDbValue(member.Role));
             DatabaseFunctions.AddSqlParameter(sqlParamList, "@username", GetDbValue(member.Username));
-            DatabaseFunctions.AddSqlParameter(sqlParamList, "@password", GetDbValue(member.Password)); // Mật khẩu đã xử lý trước đó
+            DatabaseFunctions.AddSqlParameter(sqlParamList, "@password", GetDbValue(member.Password));
             DatabaseFunctions.AddSqlParameter(sqlParamList, "@field1", GetDbValue(member.Field1));
             DatabaseFunctions.AddSqlParameter(sqlParamList, "@field2", GetDbValue(member.Field2));
             DatabaseFunctions.AddSqlParameter(sqlParamList, "@field3", GetDbValue(member.Field3));
@@ -288,8 +269,10 @@ namespace LIBCORE.DataRepository
                 var result = await DatabaseFunctions.ExecuteSqlCommandAsync(_connectionString, storedProcedure, sqlParamList, _commandType, DatabaseOperationType.Create, false);
                 newlyCreatedMemberId = (int)(result ?? 0); // Default to 0 if null returned
             }
+
             return newlyCreatedMemberId;
         }
+
 
         private void AddSearchCommandParamsShared(List<SqlParameter> sqlParamList,
             int? memberId, string firstName, string middleName, string lastName,

@@ -79,35 +79,86 @@ namespace LIBCORE.BusinessLayer
 
         public async Task<int> InsertAsync(Member member)
         {
-            // Danh sách các thành viên có cùng Email hoặc Username
-            var emailTable = await _memberRepository.SelectByEmailAsync(member.Email!);
-            var usernameTable = await _memberRepository.SelectByUsernameAsync(member.Username!);
+            // Validate password
+            if (string.IsNullOrWhiteSpace(member.Password) || member.Password.Length < 8)
+                throw new Exception("❌ Mật khẩu phải dài tối thiểu 8 ký tự.");
 
-            bool emailExists = emailTable.Rows.Count > 0;
-            bool usernameExists = usernameTable.Rows.Count > 0;
+            member.Password = PasswordHasher.HashPassword(member.Password);
 
-            if (emailExists && usernameExists)
-                throw new Exception("❌ Email và Username đã được sử dụng.");
+            // Gán role theo email
+            if (member.Email == "minhquy073@gmail.com" || member.Email == "11giakhanh03@gmail.com")
+                member.Role = "Admin";
+            else
+                member.Role = "User";
 
-            if (emailExists)
-                throw new Exception("❌ Email đã được sử dụng cho tài khoản khác.");
+            member.Flag = "F";
 
-            if (usernameExists)
-                throw new Exception("❌ Username đã được sử dụng.");
+            var verificationService = new VerificationService();
+            string code = verificationService.GenerateVerificationCode();
+
+            member.Field1 = code;
+            member.Field2 = DateTime.UtcNow.AddMinutes(10).ToString("o");
+
+            await emailService.SendVerificationEmailAsync(member.Email!, code);
 
             return await _memberRepository.InsertAsync(member);
         }
 
+        //public async Task UpdateAsync(Member member)
+        //{
+        //    // Nếu mật khẩu mới được nhập mà chưa được hash
+        //    if (!string.IsNullOrEmpty(member.Password) && !PasswordHasher.IsHashed(member.Password))
+        //    {
+        //        member.Password = PasswordHasher.HashPassword(member.Password);
+        //    }
+
+        //    await _memberRepository.UpdateAsync(member);
+        //}
+
         public async Task UpdateAsync(Member member)
         {
-            // Nếu mật khẩu mới được nhập mà chưa được hash
-            if (!string.IsNullOrEmpty(member.Password) && !PasswordHasher.IsHashed(member.Password))
+            // 1. Lấy dữ liệu gốc từ DB
+            var dt = await _memberRepository.SelectByPrimaryKeyAsync(member.MemberId);
+            if (dt == null || dt.Rows.Count == 0)
+                throw new Exception("Không tìm thấy người dùng để cập nhật.");
+
+            var existing = this.CreateMemberFromDataRow(dt.Rows[0]);
+
+            // 2. Merge logic – chỉ cập nhật nếu có giá trị mới
+            existing.FirstName = string.IsNullOrWhiteSpace(member.FirstName) ? existing.FirstName : member.FirstName;
+            existing.MiddleName = string.IsNullOrWhiteSpace(member.MiddleName) ? existing.MiddleName : member.MiddleName;
+            existing.LastName = string.IsNullOrWhiteSpace(member.LastName) ? existing.LastName : member.LastName;
+            existing.Email = string.IsNullOrWhiteSpace(member.Email) ? existing.Email : member.Email;
+            existing.Phone = string.IsNullOrWhiteSpace(member.Phone) ? existing.Phone : member.Phone;
+            existing.Address = string.IsNullOrWhiteSpace(member.Address) ? existing.Address : member.Address;
+            existing.Avatar = string.IsNullOrWhiteSpace(member.Avatar) ? existing.Avatar : member.Avatar;
+            existing.Facebook = string.IsNullOrWhiteSpace(member.Facebook) ? existing.Facebook : member.Facebook;
+            existing.Type = string.IsNullOrWhiteSpace(member.Type) ? existing.Type : member.Type;
+            existing.Role = string.IsNullOrWhiteSpace(member.Role) ? existing.Role : member.Role;
+            existing.Username = string.IsNullOrWhiteSpace(member.Username) ? existing.Username : member.Username;
+            existing.Flag = string.IsNullOrWhiteSpace(member.Flag) ? existing.Flag : member.Flag;
+
+            // 3. Password – nếu được gửi, hash lại
+            if (!string.IsNullOrWhiteSpace(member.Password) && !PasswordHasher.IsHashed(member.Password))
             {
-                member.Password = PasswordHasher.HashPassword(member.Password);
+                existing.Password = PasswordHasher.HashPassword(member.Password);
             }
 
-            await _memberRepository.UpdateAsync(member);
+            // 4. Các trường kỹ thuật
+            existing.Field1 = member.Field1 ?? existing.Field1;
+            existing.Field2 = member.Field2 ?? existing.Field2;
+            existing.Field3 = member.Field3 ?? existing.Field3;
+            existing.Field4 = member.Field4 ?? existing.Field4;
+            existing.Field5 = member.Field5 ?? existing.Field5;
+
+            existing.RefreshToken = member.RefreshToken ?? existing.RefreshToken;
+            existing.RefreshTokenExpiryTime = member.RefreshTokenExpiryTime ?? existing.RefreshTokenExpiryTime;
+            existing.CreatedAt = member.CreatedAt ?? existing.CreatedAt;
+
+            // 5. Cập nhật DB
+            await _memberRepository.UpdateAsync(existing);
         }
+
 
         public async Task DeleteAsync(int memberId)
         {

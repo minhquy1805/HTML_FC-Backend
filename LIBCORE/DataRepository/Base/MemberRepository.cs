@@ -108,50 +108,12 @@ namespace LIBCORE.DataRepository
 
         public async Task<int> InsertAsync(Member member)
         {
-            // Gán Role
-            if (member.Email == "minhquy073@gmail.com" || member.Email == "11giakhanh03@gmail.com")
-            {
-                member.Role = "Admin";
-            }
-            else
-            {
-                member.Role = "User";
-            }
-
-            // Gán Flag chưa xác thực
-            member.Flag = "F";
-
-            // Sinh mã xác thực
-            var verificationService = new VerificationService();
-            string code = verificationService.GenerateVerificationCode();
-
-            // Gán mã xác thực vào Field1
-            member.Field1 = code;
-            member.Field2 = DateTime.UtcNow.AddMinutes(10).ToString("o"); // ISO 8601
-
-            // Gửi email xác nhận
-            await emailService.SendVerificationEmailAsync(member.Email!, code);
-
-            // Insert dữ liệu
             return await this.InsertUpdateAsync(member, DatabaseOperationType.Create);
         }
 
         async Task IMemberRepository.UpdateAsync(Member member)
         {
-            string oldPassword = await GetMemberPasswordById(member.MemberId);
-
-            if (!string.IsNullOrEmpty(member.Password))
-            {
-                if (!PasswordHasher.IsHashed(member.Password))  // ✅ Chỉ hash nếu chưa mã hóa
-                {
-                    member.Password = PasswordHasher.HashPassword(member.Password);
-                }
-            }
-            else
-            {
-                member.Password = oldPassword;
-            }
-
+            // ❌ KHÔNG xử lý hash tại đây nữa
             await this.InsertUpdateAsync(member, DatabaseOperationType.Update);
         }
 

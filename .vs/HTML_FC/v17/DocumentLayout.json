@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|c:\\football-team-dev\\backend\\html_fc\\libcore\\businesslayer\\base\\memberbusinesslayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|solutionrelative:libcore\\businesslayer\\base\\memberbusinesslayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|c:\\football-team-dev\\backend\\html_fc\\libcore\\helper\\membervalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|solutionrelative:libcore\\helper\\membervalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|c:\\football-team-dev\\backend\\html_fc\\libcore\\helper\\loginhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|solutionrelative:libcore\\helper\\loginhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -14,11 +22,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MemberValidator.cs",
+              "DocumentMoniker": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\Helper\\MemberValidator.cs",
+              "RelativeDocumentMoniker": "LIBCORE\\Helper\\MemberValidator.cs",
+              "ToolTip": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\Helper\\MemberValidator.cs",
+              "RelativeToolTip": "LIBCORE\\Helper\\MemberValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T15:35:26.323Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "MemberBusinessLayer.cs",
+              "DocumentMoniker": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\BusinessLayer\\Base\\MemberBusinessLayer.cs",
+              "RelativeDocumentMoniker": "LIBCORE\\BusinessLayer\\Base\\MemberBusinessLayer.cs",
+              "ToolTip": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\BusinessLayer\\Base\\MemberBusinessLayer.cs",
+              "RelativeToolTip": "LIBCORE\\BusinessLayer\\Base\\MemberBusinessLayer.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAkwG8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T15:34:33.89Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "LoginHelper.cs",
               "DocumentMoniker": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\Helper\\LoginHelper.cs",
               "RelativeDocumentMoniker": "LIBCORE\\Helper\\LoginHelper.cs",

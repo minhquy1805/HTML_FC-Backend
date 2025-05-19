@@ -362,15 +362,15 @@ namespace LIBCORE.DataRepository
 
         }
 
-        private async Task<string> GetMemberPasswordById(int memberId)
-        {
-            string storedProcedure = "[dbo].[GetMemberPasswordById]";
-            List<SqlParameter> sqlParamList = new();
-            DatabaseFunctions.AddSqlParameter(sqlParamList, "@memberId", memberId);
+        //private async Task<string> GetMemberPasswordById(int memberId)
+        //{
+        //    string storedProcedure = "[dbo].[GetMemberPasswordById]";
+        //    List<SqlParameter> sqlParamList = new();
+        //    DatabaseFunctions.AddSqlParameter(sqlParamList, "@memberId", memberId);
 
-            var dataTable = await DatabaseFunctions.GetDataTableAsync(_connectionString, storedProcedure, sqlParamList, _commandType);
+        //    var dataTable = await DatabaseFunctions.GetDataTableAsync(_connectionString, storedProcedure, sqlParamList, _commandType);
 
-            return (dataTable.Rows.Count > 0) ? dataTable.Rows[0]["Password"].ToString()! : string.Empty;
-        }
+        //    return (dataTable.Rows.Count > 0) ? dataTable.Rows[0]["Password"].ToString()! : string.Empty;
+        //}
     }
 }

@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
 using System.Composition;
 using System.Data;
+using System.Text.Json;
 
 namespace LIBCORE.BusinessLayer
 {
@@ -124,23 +125,31 @@ namespace LIBCORE.BusinessLayer
 
         public async Task UpdateAsync(Member member)
         {
-            // Lấy dữ liệu gốc từ DB
+            // 1. Lấy dữ liệu gốc từ DB
             var dt = await _memberRepository.SelectByPrimaryKeyAsync(member.MemberId);
             if (dt == null || dt.Rows.Count == 0)
                 throw new Exception("Không tìm thấy người dùng để cập nhật.");
 
             var existing = this.CreateMemberFromDataRow(dt.Rows[0]);
 
-            // Hash mật khẩu nếu cần (trước khi merge)
+            // 2. Hash mật khẩu nếu cần (trước khi merge)
             if (!string.IsNullOrWhiteSpace(member.Password) && !PasswordHasher.IsHashed(member.Password))
             {
                 member.Password = PasswordHasher.HashPassword(member.Password);
             }
 
-            // 🔁 Gọi hàm merge
+            // ✅ Log trước khi merge (optional)
+            Console.WriteLine("📤 Trước merge:");
+            Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(existing, new System.Text.Json.JsonSerializerOptions { WriteIndented = true }));
+
+            // 3. Gộp dữ liệu từ member → existing
             MemberMerger.Merge(member, existing);
 
-            //Cập nhật DB
+            // ✅ Log sau khi merge (để chắc chắn các field đã được giữ lại hoặc cập nhật đúng)
+            Console.WriteLine("✅ Sau merge:");
+            Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(existing, new System.Text.Json.JsonSerializerOptions { WriteIndented = true }));
+
+            // 4. Cập nhật DB
             await _memberRepository.UpdateAsync(existing);
         }
 

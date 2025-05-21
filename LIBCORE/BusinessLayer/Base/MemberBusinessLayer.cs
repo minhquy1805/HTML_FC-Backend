@@ -141,6 +141,7 @@ namespace LIBCORE.BusinessLayer
             // ✅ Log trước khi merge (optional)
             Console.WriteLine("📤 Trước merge:");
             Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(existing, new System.Text.Json.JsonSerializerOptions { WriteIndented = true }));
+            Console.WriteLine("📤 ✅ CI/CD test thành công!");
 
             // 3. Gộp dữ liệu từ member → existing
             MemberMerger.Merge(member, existing);

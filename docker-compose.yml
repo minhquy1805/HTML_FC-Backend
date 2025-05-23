@@ -1,4 +1,3 @@
-
 version: '3.8'
 
 services:
@@ -14,6 +13,8 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ConnectionStrings__Default=Server=sqlserver;Database=FOOTBALLHTMLFC;User=sa;Password=Quypro2003@
+    volumes:                           # ✅ THÊM DÒNG NÀY
+      - ./wwwroot:/app/wwwroot         # ✅ Mount wwwroot từ Windows vào container
     restart: unless-stopped
 
   sqlserver:

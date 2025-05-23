@@ -88,7 +88,7 @@ namespace HTML_FC
             // Bật Authentication trước Authorization
             app.UseAuthentication(); // ✅ PHẢI CÓ
             app.UseAuthorization(); // ✅ PHẢI CÓ    
-
+            app.UseStaticFiles();
             app.MapControllers();
 
             app.Run();

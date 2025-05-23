@@ -30,7 +30,7 @@ namespace HTML_FC.Controllers.Base
 
 
 
-            string uploadDirectory = $"project2024/{projectCode.ToUpper()}";
+            string uploadDirectory = $"project2025/{projectCode.ToUpper()}";
             string wwwRootPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
 
             string combinedUploadPath = Path.Combine(wwwRootPath, uploadDirectory);
@@ -79,7 +79,7 @@ namespace HTML_FC.Controllers.Base
               .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
-        [Authorize(Roles = "User,Admin")]
+       
         [HttpPost("Upload Single Picture")]
         public async Task<IActionResult> Upload(IFormFile file, string uploadDirectory)
         {

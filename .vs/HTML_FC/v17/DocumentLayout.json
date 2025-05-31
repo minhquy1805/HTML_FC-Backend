@@ -3,8 +3,32 @@
   "WorkspaceRootPath": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|c:\\football-team-dev\\backend\\html_fc\\libcore\\models\\base\\calendar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|solutionrelative:libcore\\models\\base\\calendar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|c:\\football-team-dev\\backend\\html_fc\\libcore\\models\\base\\member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|solutionrelative:libcore\\models\\base\\member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|c:\\football-team-dev\\backend\\html_fc\\libcore\\models\\calendar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|solutionrelative:libcore\\models\\calendar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57F02FB2-08E3-4FEE-818D-BA0E0EDC49DA}|HTML_FC\\HTML_FC.csproj|c:\\football-team-dev\\backend\\html_fc\\html_fc\\controllers\\calendarapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57F02FB2-08E3-4FEE-818D-BA0E0EDC49DA}|HTML_FC\\HTML_FC.csproj|solutionrelative:html_fc\\controllers\\calendarapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57F02FB2-08E3-4FEE-818D-BA0E0EDC49DA}|HTML_FC\\HTML_FC.csproj|c:\\football-team-dev\\backend\\html_fc\\html_fc\\controllers\\newsapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57F02FB2-08E3-4FEE-818D-BA0E0EDC49DA}|HTML_FC\\HTML_FC.csproj|solutionrelative:html_fc\\controllers\\newsapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{57F02FB2-08E3-4FEE-818D-BA0E0EDC49DA}|HTML_FC\\HTML_FC.csproj|c:\\football-team-dev\\backend\\html_fc\\html_fc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{57F02FB2-08E3-4FEE-818D-BA0E0EDC49DA}|HTML_FC\\HTML_FC.csproj|solutionrelative:html_fc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57F02FB2-08E3-4FEE-818D-BA0E0EDC49DA}|HTML_FC\\HTML_FC.csproj|c:\\football-team-dev\\backend\\html_fc\\html_fc\\html_fc.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{57F02FB2-08E3-4FEE-818D-BA0E0EDC49DA}|HTML_FC\\HTML_FC.csproj|solutionrelative:html_fc\\html_fc.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{57F02FB2-08E3-4FEE-818D-BA0E0EDC49DA}|HTML_FC\\HTML_FC.csproj|c:\\football-team-dev\\backend\\html_fc\\html_fc\\controllers\\base\\filecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -18,24 +42,100 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Member.cs",
+              "DocumentMoniker": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\Models\\Base\\Member.cs",
+              "RelativeDocumentMoniker": "LIBCORE\\Models\\Base\\Member.cs",
+              "ToolTip": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\Models\\Base\\Member.cs",
+              "RelativeToolTip": "LIBCORE\\Models\\Base\\Member.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAFQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T15:06:58.525Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Calendar.cs",
+              "DocumentMoniker": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\Models\\Base\\Calendar.cs",
+              "RelativeDocumentMoniker": "LIBCORE\\Models\\Base\\Calendar.cs",
+              "ToolTip": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\Models\\Base\\Calendar.cs",
+              "RelativeToolTip": "LIBCORE\\Models\\Base\\Calendar.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAYwCoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T15:06:51.412Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Calendar.cs",
+              "DocumentMoniker": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\Models\\Calendar.cs",
+              "RelativeDocumentMoniker": "LIBCORE\\Models\\Calendar.cs",
+              "ToolTip": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\Models\\Calendar.cs",
+              "RelativeToolTip": "LIBCORE\\Models\\Calendar.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T15:06:48.142Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CalendarApiController.cs",
+              "DocumentMoniker": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\HTML_FC\\Controllers\\CalendarApiController.cs",
+              "RelativeDocumentMoniker": "HTML_FC\\Controllers\\CalendarApiController.cs",
+              "ToolTip": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\HTML_FC\\Controllers\\CalendarApiController.cs",
+              "RelativeToolTip": "HTML_FC\\Controllers\\CalendarApiController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T15:04:32.386Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "NewsApiController.cs",
+              "DocumentMoniker": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\HTML_FC\\Controllers\\NewsApiController.cs",
+              "RelativeDocumentMoniker": "HTML_FC\\Controllers\\NewsApiController.cs",
+              "ToolTip": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\HTML_FC\\Controllers\\NewsApiController.cs",
+              "RelativeToolTip": "HTML_FC\\Controllers\\NewsApiController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T15:08:48.172Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HTML_FC.http",
+              "DocumentMoniker": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\HTML_FC\\HTML_FC.http",
+              "RelativeDocumentMoniker": "HTML_FC\\HTML_FC.http",
+              "ToolTip": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\HTML_FC\\HTML_FC.http",
+              "RelativeToolTip": "HTML_FC\\HTML_FC.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-05-29T15:08:43.627Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\HTML_FC\\Program.cs",
               "RelativeDocumentMoniker": "HTML_FC\\Program.cs",
               "ToolTip": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\HTML_FC\\Program.cs",
               "RelativeToolTip": "HTML_FC\\Program.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAmwEcAAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAADcAAAAAAAAAAAAQwEcAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T16:50:21.362Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-23T16:50:21.362Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "FileController.cs",
               "DocumentMoniker": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\HTML_FC\\Controllers\\Base\\FileController.cs",
               "RelativeDocumentMoniker": "HTML_FC\\Controllers\\Base\\FileController.cs",

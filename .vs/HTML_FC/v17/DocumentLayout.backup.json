@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{57F02FB2-08E3-4FEE-818D-BA0E0EDC49DA}|HTML_FC\\HTML_FC.csproj|c:\\football-team-dev\\backend\\html_fc\\html_fc\\controllers\\newsapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57F02FB2-08E3-4FEE-818D-BA0E0EDC49DA}|HTML_FC\\HTML_FC.csproj|solutionrelative:html_fc\\controllers\\newsapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{57F02FB2-08E3-4FEE-818D-BA0E0EDC49DA}|HTML_FC\\HTML_FC.csproj|c:\\football-team-dev\\backend\\html_fc\\html_fc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{57F02FB2-08E3-4FEE-818D-BA0E0EDC49DA}|HTML_FC\\HTML_FC.csproj|solutionrelative:html_fc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57F02FB2-08E3-4FEE-818D-BA0E0EDC49DA}|HTML_FC\\HTML_FC.csproj|c:\\football-team-dev\\backend\\html_fc\\html_fc\\html_fc.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{57F02FB2-08E3-4FEE-818D-BA0E0EDC49DA}|HTML_FC\\HTML_FC.csproj|solutionrelative:html_fc\\html_fc.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{57F02FB2-08E3-4FEE-818D-BA0E0EDC49DA}|HTML_FC\\HTML_FC.csproj|c:\\football-team-dev\\backend\\html_fc\\html_fc\\controllers\\base\\filecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,19 +31,45 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "NewsApiController.cs",
+              "DocumentMoniker": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\HTML_FC\\Controllers\\NewsApiController.cs",
+              "RelativeDocumentMoniker": "HTML_FC\\Controllers\\NewsApiController.cs",
+              "ToolTip": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\HTML_FC\\Controllers\\NewsApiController.cs",
+              "RelativeToolTip": "HTML_FC\\Controllers\\NewsApiController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAzwAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T15:08:48.172Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HTML_FC.http",
+              "DocumentMoniker": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\HTML_FC\\HTML_FC.http",
+              "RelativeDocumentMoniker": "HTML_FC\\HTML_FC.http",
+              "ToolTip": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\HTML_FC\\HTML_FC.http",
+              "RelativeToolTip": "HTML_FC\\HTML_FC.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-05-29T15:08:43.627Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\HTML_FC\\Program.cs",
               "RelativeDocumentMoniker": "HTML_FC\\Program.cs",
               "ToolTip": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\HTML_FC\\Program.cs",
               "RelativeToolTip": "HTML_FC\\Program.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAmwEcAAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAADcAAAAAAAAAAAAQwEcAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-23T16:50:21.362Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "FileController.cs",
               "DocumentMoniker": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\HTML_FC\\Controllers\\Base\\FileController.cs",
               "RelativeDocumentMoniker": "HTML_FC\\Controllers\\Base\\FileController.cs",

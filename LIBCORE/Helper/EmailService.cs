@@ -103,5 +103,32 @@ namespace LIBCORE.Helper
             await smtp.SendAsync(email);
             await smtp.DisconnectAsync(true);
         }
+
+        public async Task SendNewsNotificationEmailAsync(string toEmail, News news)
+        {
+            var email = new MimeMessage();
+            email.From.Add(new MailboxAddress(_emailSettings.FromName, _emailSettings.FromEmail));
+            email.To.Add(MailboxAddress.Parse(toEmail));
+            email.Subject = $"📰 Tin tức mới từ HTML FC: {news.Title}";
+
+            email.Body = new TextPart(TextFormat.Html)
+            {
+                Text = $@"
+                    <p>Xin chào,</p>
+                    <p>Có một tin tức mới vừa được đăng trên hệ thống <strong>HTML FC</strong>:</p>
+                    <h3>{news.Title}</h3>
+                    <p>{news.Lead}</p>
+                    <a href='{_emailSettings.WebsiteBaseUrl}/news'>Xem chi tiết</a>
+                    <br/><br/>
+                    <p>Trân trọng,<br/>Đội ngũ HTML FC</p>
+                "
+            };
+
+            using var smtp = new SmtpClient();
+            await smtp.ConnectAsync("smtp.gmail.com", 587, SecureSocketOptions.StartTls);
+            await smtp.AuthenticateAsync(_emailSettings.FromEmail, _emailSettings.AppPassword);
+            await smtp.SendAsync(email);
+            await smtp.DisconnectAsync(true);
+        }
     }
 }

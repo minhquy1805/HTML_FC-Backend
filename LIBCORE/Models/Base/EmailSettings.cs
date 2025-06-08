@@ -7,5 +7,7 @@ namespace LIBCORE.Models
         public string FromEmail { get; set; } = string.Empty;
         public string FromName { get; set; } = "HTMLFC Football Club";
         public string AppPassword { get; set; } = string.Empty;
+
+        public string WebsiteBaseUrl { get; set; } = string.Empty;
     }
 }

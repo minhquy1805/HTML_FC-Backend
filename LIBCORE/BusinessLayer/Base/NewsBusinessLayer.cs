@@ -1,15 +1,20 @@
 ﻿using LIBCORE.DataRepository;
 using System.Data;
 using LIBCORE.Models;
+using LIBCORE.Helper;
 namespace LIBCORE.BusinessLayer
 {
     public partial class NewsBusinessLayer : INewsBusinessLayer
     {
         private readonly INewsRepository _newsRepository;
+        private readonly IMemberRepository _memberRepository;
+        private readonly EmailService _emailService;
 
-        public NewsBusinessLayer(INewsRepository newsRepository)
+        public NewsBusinessLayer(INewsRepository newsRepository, IMemberRepository memberRepository, EmailService emailService)
         {
             _newsRepository = newsRepository;
+            _memberRepository = memberRepository;
+            _emailService = emailService;
         }
 
         public async Task<News> SelectByPrimaryKeyAsync(int newsId)
@@ -38,7 +43,24 @@ namespace LIBCORE.BusinessLayer
 
         public async Task<int> InsertAsync(News news)
         {
-            return await _newsRepository.InsertAsync(news);
+            // 1. Insert tin tức mới
+            int id = await _newsRepository.InsertAsync(news);
+
+            // 2. Gửi email thông báo cho các member đã xác thực (Flag = 'T')
+            DataTable dt = await _memberRepository.SelectAllAsync();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                string flag = row["Flag"]?.ToString() ?? "";
+                string email = row["Email"]?.ToString() ?? "";
+
+                if (flag == "T" && !string.IsNullOrWhiteSpace(email))
+                {
+                    await _emailService.SendNewsNotificationEmailAsync(email, news);
+                }
+            }
+
+            return id;
         }
 
         public async Task UpdateAsync(News news)

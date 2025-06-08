@@ -94,7 +94,9 @@ namespace LIBCORE.Helper
             services.AddScoped<INewsBusinessLayer>(provider =>
             {
                 var newsRepository = provider.GetRequiredService<INewsRepository>();
-                return new NewsBusinessLayer(newsRepository);
+                var memberRepository = provider.GetRequiredService<IMemberRepository>();
+                var emailService = provider.GetRequiredService<EmailService>();
+                return new NewsBusinessLayer(newsRepository, memberRepository, emailService);
             });
 
             services.AddScoped<ICertificateTypeBusinessLayer>(provider =>

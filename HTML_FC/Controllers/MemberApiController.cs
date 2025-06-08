@@ -47,13 +47,21 @@ namespace HTML_FC.Controllers
             }
         }
 
-        [Authorize(Roles = "Admin,User")]
+        [Authorize(Roles = "Admin")]
         [Route("[controller]/update")]
         [HttpPost]
         public async Task<IActionResult> Update([FromBody] Member model, bool isForListInlineOrListCrud = false)
         {
             // update existing record
             return await this.AddEditAsync(model, CrudOperation.Update, isForListInlineOrListCrud);
+        }
+
+        [Authorize(Roles = "User")]
+        [HttpPost("update-profile")]
+        public async Task<IActionResult> UpdateProfile([FromBody] Member model)
+        {
+            await _MemberBusinessLayer.UpdateProfileAsync(model);
+            return Ok("✅ Cập nhật thông tin cá nhân thành công.");
         }
 
 

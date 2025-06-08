@@ -112,17 +112,6 @@ namespace LIBCORE.BusinessLayer
             return await _memberRepository.InsertAsync(member);
         }
 
-        //public async Task UpdateAsync(Member member)
-        //{
-        //    // Nếu mật khẩu mới được nhập mà chưa được hash
-        //    if (!string.IsNullOrEmpty(member.Password) && !PasswordHasher.IsHashed(member.Password))
-        //    {
-        //        member.Password = PasswordHasher.HashPassword(member.Password);
-        //    }
-
-        //    await _memberRepository.UpdateAsync(member);
-        //}
-
         public async Task UpdateAsync(Member member)
         {
             // 1. Lấy dữ liệu gốc từ DB
@@ -154,95 +143,33 @@ namespace LIBCORE.BusinessLayer
             await _memberRepository.UpdateAsync(existing);
         }
 
+        public async Task UpdateProfileAsync (Member member)
+        {
+            // Lấy dữ liệu gốc từ DB
+            var dt = await _memberRepository.SelectByPrimaryKeyAsync(member.MemberId);
+            if (dt == null || dt.Rows.Count == 0)
+                throw new Exception("Không tìm thấy người dùng để cập nhật.");
+
+            var existing = this.CreateMemberFromDataRow(dt.Rows[0]);
+
+            // 🔒 Không cho phép người dùng tự sửa các trường nhạy cảm
+            member.Role = null;
+            member.Username = null;
+            member.Flag = null;
+            member.Password = null; // Không cho phép thay mật khẩu ở đây
+            member.RefreshToken = null;
+            member.RefreshTokenExpiryTime = null;
+
+            MemberMerger.Merge(member, existing);
+
+            // ✅ Cập nhật DB
+            await _memberRepository.UpdateAsync(existing);
+        }
 
         public async Task DeleteAsync(int memberId)
         {
             await _memberRepository.DeleteAsync(memberId);
         }
-
-        // --------------------- THÊM LOGIN --------------------- 
-        //public async Task<string?> LoginAsync(string username, string password, string deviceInfo)
-        //{
-        //    // Tìm thành viên theo username
-        //    DataTable dt = await _memberRepository.SelectByUsernameAsync(username);
-
-        //    if (dt is null || dt.Rows.Count == 0)
-        //    {
-        //        Console.WriteLine("❌ Không tìm thấy user trong DB!");
-        //        return null;
-        //    }
-
-        //    // Lấy thông tin user
-        //    Member member = this.CreateMemberFromDataRow(dt.Rows[0]);
-
-        //    // ❗ Check xác thực email
-        //    if (member.Flag != "T")
-        //    {
-        //        Console.WriteLine("⚠️ Tài khoản chưa xác thực email.");
-        //        return null;
-        //    }
-
-        //    // 👉 Kiểm tra giới hạn login sai
-        //    int failCount = int.TryParse(member.Field5, out var fc) ? fc : 0;
-        //    DateTime.TryParse(member.Field4, out DateTime lastFailAt);
-
-        //    if (failCount >= 5 && lastFailAt.AddMinutes(15) > DateTime.UtcNow)
-        //    {
-        //        Console.WriteLine("⛔ Tài khoản bị khóa tạm thời do nhập sai quá nhiều lần!");
-        //        return null;
-        //    }
-
-        //    // ✅ Kiểm tra mật khẩu
-        //    bool isMatch = PasswordHasher.VerifyPassword(password, member.Password!);
-        //    Console.WriteLine($"🛠 Kết quả kiểm tra mật khẩu: {isMatch}");
-
-        //    if (!isMatch)
-        //    {
-        //        // ❌ Sai → tăng bộ đếm + cập nhật thời gian
-        //        failCount++;
-        //        member.Field5 = failCount.ToString();
-        //        member.Field4 = DateTime.UtcNow.ToString("o");
-        //        await this.UpdateAsync(member);
-
-        //        Console.WriteLine($"❌ Sai mật khẩu! Số lần sai: {failCount}");
-        //        return null;
-        //    }
-
-        //    // ✅ Đúng → reset fail count
-        //    member.Field5 = "0";
-        //    member.Field4 = null;
-        //    await this.UpdateAsync(member);
-
-        //    // 🔑 Tạo Access Token
-        //    string accessToken = _jwtTokenGenerator.GenerateToken(member.MemberId, member.Username!, member.Role!);
-
-        //    // 🔁 Tạo Refresh Token
-        //    string refreshToken = Guid.NewGuid().ToString();
-        //    DateTime refreshTokenExpiry = DateTime.UtcNow.AddDays(7);
-
-        //    // ✅ Lưu refresh token vào database
-        //    await _memberRepository.UpdateRefreshTokenAsync(member.MemberId, refreshToken, refreshTokenExpiry);
-
-        //    // ➕ Lưu vào bảng MemberRefreshTokens
-        //    await _memberRefreshTokensBusinessLayer.InsertAsync(new MemberRefreshToken
-        //    {
-        //        MemberId = member.MemberId,
-        //        RefreshToken = refreshToken,
-        //        RefreshTokenExpiry = refreshTokenExpiry,
-        //        DeviceInfo = deviceInfo,
-        //        CreatedAt = DateTime.UtcNow,
-        //        Flag = "A"
-        //    });
-
-        //    // ✅ Trả về cả access token và refresh token dưới dạng JSON string
-        //    var result = new
-        //    {
-        //        accessToken = accessToken,
-        //        refreshToken = refreshToken
-        //    };
-
-        //    return System.Text.Json.JsonSerializer.Serialize(result);
-        //}
 
         public async Task<string?> LoginAsync(string username, string password, string deviceInfo)
         {

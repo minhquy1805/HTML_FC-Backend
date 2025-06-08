@@ -42,6 +42,8 @@ namespace LIBCORE.BusinessLayer
 
         public Task UpdateAsync(Member member);
 
+        public Task UpdateProfileAsync(Member member);
+
         // Thêm phương thức đăng nhập để trả về token
         public Task<string?> LoginAsync(string username, string password, string deviceInfo);
 

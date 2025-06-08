@@ -1,4 +1,5 @@
 ﻿using LIBCORE.DataRepository;
+using LIBCORE.Helper;
 using LIBCORE.Models;
 using System;
 using System.Collections.Generic;
@@ -15,10 +16,14 @@ namespace LIBCORE.BusinessLayer
     public partial class CalendarBusinessLayer : ICalendarBusinessLayer
     {
         private readonly ICalendarRepository _calendarRepository;
+        private readonly IMemberRepository _memberRepository;
+        private readonly EmailService _emailService;
 
-        public CalendarBusinessLayer(ICalendarRepository calendarRepository)
+        public CalendarBusinessLayer(ICalendarRepository calendarRepository, IMemberRepository memberRepository, EmailService emailService)
         {
             _calendarRepository = calendarRepository;
+            _memberRepository = memberRepository;
+            _emailService = emailService;
         }
 
         public async Task<Calendar> SelectByPrimaryKeyAsync(int calendarId) 
@@ -45,9 +50,26 @@ namespace LIBCORE.BusinessLayer
         }
 
         public async Task<int> InsertAsync(Calendar calendar)
-        { 
-            return await _calendarRepository.InsertAsync(calendar);
+        {
+            // 1. Insert lịch mới
+            int id = await _calendarRepository.InsertAsync(calendar);
+
+            // 2. Gửi email cho các thành viên đã xác thực (Flag = 'T')
+            DataTable dt = await _memberRepository.SelectAllAsync();
+            foreach (DataRow row in dt.Rows)
+            {
+                string flag = row["Flag"]?.ToString() ?? "";
+                string email = row["Email"]?.ToString() ?? "";
+
+                if (flag == "T" && !string.IsNullOrWhiteSpace(email))
+                {
+                    await _emailService.SendCalendarNotificationEmailAsync(email, calendar);
+                }
+            }
+
+            return id;
         }
+
 
         public async Task UpdateAsync(Calendar calendar)
         {

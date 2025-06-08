@@ -4,12 +4,14 @@ using MimeKit;
 using Microsoft.Extensions.Options;
 using LIBCORE.Models;
 using MimeKit.Text;
+using LIBCORE.DataRepository;
 
 namespace LIBCORE.Helper
 {
     public class EmailService
     {
         private readonly EmailSettings _emailSettings;
+
 
         public EmailService(IOptions<EmailSettings> options)
         {
@@ -62,6 +64,35 @@ namespace LIBCORE.Helper
                     <p>Vui lòng nhập mã này vào màn hình đổi mật khẩu trong vòng <strong>10 phút</strong>.</p>
                     <br/>
                     <p>Nếu bạn không yêu cầu, vui lòng bỏ qua email này.</p>
+                    <p>Trân trọng,<br/>Đội ngũ HTML FC</p>
+                "
+            };
+
+            using var smtp = new SmtpClient();
+            await smtp.ConnectAsync("smtp.gmail.com", 587, SecureSocketOptions.StartTls);
+            await smtp.AuthenticateAsync(_emailSettings.FromEmail, _emailSettings.AppPassword);
+            await smtp.SendAsync(email);
+            await smtp.DisconnectAsync(true);
+        }
+
+        public async Task SendCalendarNotificationEmailAsync(string toEmail, Calendar calendar)
+        {
+            var email = new MimeMessage();
+            email.From.Add(new MailboxAddress(_emailSettings.FromName, _emailSettings.FromEmail));
+            email.To.Add(MailboxAddress.Parse(toEmail));
+            email.Subject = $"📅 Lịch bóng đá mới: {calendar.Title}";
+
+            email.Body = new TextPart(TextFormat.Html)
+            {
+                Text = $@"
+                    <p>Xin chào,</p>
+                    <p>HTML FC vừa thêm lịch bóng đá mới:</p>
+                    <ul>
+                        <li><strong>Tiêu đề:</strong> {calendar.Title}</li>
+                        <li><strong>Sự kiện:</strong> {calendar.Event}</li>
+                        <li><strong>Thời gian:</strong> {calendar.CalendarTime?.ToString("dd/MM/yyyy HH:mm")}</li>
+                    </ul>
+                    <p>Hãy chuẩn bị và tham gia đầy đủ nhé!</p>
                     <p>Trân trọng,<br/>Đội ngũ HTML FC</p>
                 "
             };

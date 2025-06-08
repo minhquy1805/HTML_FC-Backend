@@ -113,7 +113,10 @@ namespace LIBCORE.Helper
             services.AddScoped<ICalendarBusinessLayer>(provider =>
             {
                 var calendarRepository = provider.GetRequiredService<ICalendarRepository>();
-                return new CalendarBusinessLayer(calendarRepository);
+                var memberRepository = provider.GetRequiredService<IMemberRepository>();
+                var emailService = provider.GetRequiredService<EmailService>();
+
+                return new CalendarBusinessLayer(calendarRepository, memberRepository, emailService);
             });
 
             services.AddScoped<IInExpenBusinessLayer>(provider =>

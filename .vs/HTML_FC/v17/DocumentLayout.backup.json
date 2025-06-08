@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|solutionrelative:libcore\\helper\\functions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{57F02FB2-08E3-4FEE-818D-BA0E0EDC49DA}|HTML_FC\\HTML_FC.csproj|c:\\football-team-dev\\backend\\html_fc\\html_fc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57F02FB2-08E3-4FEE-818D-BA0E0EDC49DA}|HTML_FC\\HTML_FC.csproj|solutionrelative:html_fc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|c:\\football-team-dev\\backend\\html_fc\\libcore\\businesslayer\\base\\calendarbusinesslayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|solutionrelative:libcore\\businesslayer\\base\\calendarbusinesslayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -22,8 +26,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\HTML_FC\\Program.cs",
+              "RelativeDocumentMoniker": "HTML_FC\\Program.cs",
+              "ToolTip": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\HTML_FC\\Program.cs",
+              "RelativeToolTip": "HTML_FC\\Program.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAkwGEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T16:56:16.064Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -32,14 +49,14 @@
               "RelativeDocumentMoniker": "LIBCORE\\Helper\\Functions.cs",
               "ToolTip": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\Helper\\Functions.cs",
               "RelativeToolTip": "LIBCORE\\Helper\\Functions.cs",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAowHcAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAmwIIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-08T16:53:25.152Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "CalendarBusinessLayer.cs",
               "DocumentMoniker": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\BusinessLayer\\Base\\CalendarBusinessLayer.cs",
               "RelativeDocumentMoniker": "LIBCORE\\BusinessLayer\\Base\\CalendarBusinessLayer.cs",
@@ -47,12 +64,11 @@
               "RelativeToolTip": "LIBCORE\\BusinessLayer\\Base\\CalendarBusinessLayer.cs",
               "ViewState": "AgIAACcAAAAAAAAAAAAwwD8AAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T16:14:22.598Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-08T16:14:22.598Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "EmailService.cs",
               "DocumentMoniker": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\Helper\\EmailService.cs",
               "RelativeDocumentMoniker": "LIBCORE\\Helper\\EmailService.cs",
@@ -60,8 +76,7 @@
               "RelativeToolTip": "LIBCORE\\Helper\\EmailService.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAE0AAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T16:24:43.744Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-08T16:24:43.744Z"
             }
           ]
         }

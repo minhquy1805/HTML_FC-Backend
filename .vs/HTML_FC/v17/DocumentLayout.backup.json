@@ -3,24 +3,20 @@
   "WorkspaceRootPath": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|c:\\football-team-dev\\backend\\html_fc\\libcore\\helper\\membermerger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|solutionrelative:libcore\\helper\\membermerger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|c:\\football-team-dev\\backend\\html_fc\\libcore\\helper\\verificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|solutionrelative:libcore\\helper\\verificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{57F02FB2-08E3-4FEE-818D-BA0E0EDC49DA}|HTML_FC\\HTML_FC.csproj|c:\\football-team-dev\\backend\\html_fc\\html_fc\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{57F02FB2-08E3-4FEE-818D-BA0E0EDC49DA}|HTML_FC\\HTML_FC.csproj|solutionrelative:html_fc\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|c:\\football-team-dev\\backend\\html_fc\\libcore\\helper\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|solutionrelative:libcore\\helper\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|c:\\football-team-dev\\backend\\html_fc\\libcore\\helper\\functions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|solutionrelative:libcore\\helper\\functions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{57F02FB2-08E3-4FEE-818D-BA0E0EDC49DA}|HTML_FC\\HTML_FC.csproj|c:\\football-team-dev\\backend\\html_fc\\html_fc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{57F02FB2-08E3-4FEE-818D-BA0E0EDC49DA}|HTML_FC\\HTML_FC.csproj|solutionrelative:html_fc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|c:\\football-team-dev\\backend\\html_fc\\libcore\\businesslayer\\base\\calendarbusinesslayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|solutionrelative:libcore\\businesslayer\\base\\calendarbusinesslayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|c:\\football-team-dev\\backend\\html_fc\\libcore\\businesslayer\\base\\memberbusinesslayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F779F2E-A94F-4F04-B2CB-94A5EFFD53CE}|LIBCORE\\LIBCORE.csproj|solutionrelative:libcore\\businesslayer\\base\\memberbusinesslayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,65 +31,53 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "MemberMerger.cs",
+              "DocumentMoniker": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\Helper\\MemberMerger.cs",
+              "RelativeDocumentMoniker": "LIBCORE\\Helper\\MemberMerger.cs",
+              "ToolTip": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\Helper\\MemberMerger.cs",
+              "RelativeToolTip": "LIBCORE\\Helper\\MemberMerger.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T15:26:47.556Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "VerificationService.cs",
+              "DocumentMoniker": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\Helper\\VerificationService.cs",
+              "RelativeDocumentMoniker": "LIBCORE\\Helper\\VerificationService.cs",
+              "ToolTip": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\Helper\\VerificationService.cs",
+              "RelativeToolTip": "LIBCORE\\Helper\\VerificationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T15:26:41.764Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\HTML_FC\\appsettings.json",
               "RelativeDocumentMoniker": "HTML_FC\\appsettings.json",
               "ToolTip": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\HTML_FC\\appsettings.json",
               "RelativeToolTip": "HTML_FC\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAcwBYAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-08T17:11:30.963Z",
+              "WhenOpened": "2025-06-19T14:27:30.157Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\HTML_FC\\Program.cs",
-              "RelativeDocumentMoniker": "HTML_FC\\Program.cs",
-              "ToolTip": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\HTML_FC\\Program.cs",
-              "RelativeToolTip": "HTML_FC\\Program.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAkwGEAAAAAAAAAAAAAAA==",
+              "Title": "MemberBusinessLayer.cs",
+              "DocumentMoniker": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\BusinessLayer\\Base\\MemberBusinessLayer.cs",
+              "RelativeDocumentMoniker": "LIBCORE\\BusinessLayer\\Base\\MemberBusinessLayer.cs",
+              "ToolTip": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\BusinessLayer\\Base\\MemberBusinessLayer.cs",
+              "RelativeToolTip": "LIBCORE\\BusinessLayer\\Base\\MemberBusinessLayer.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAIwA8AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T16:56:16.064Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Functions.cs",
-              "DocumentMoniker": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\Helper\\Functions.cs",
-              "RelativeDocumentMoniker": "LIBCORE\\Helper\\Functions.cs",
-              "ToolTip": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\Helper\\Functions.cs",
-              "RelativeToolTip": "LIBCORE\\Helper\\Functions.cs",
-              "ViewState": "AgIAAHIAAAAAAAAAAAAQwIIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T16:53:25.152Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CalendarBusinessLayer.cs",
-              "DocumentMoniker": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\BusinessLayer\\Base\\CalendarBusinessLayer.cs",
-              "RelativeDocumentMoniker": "LIBCORE\\BusinessLayer\\Base\\CalendarBusinessLayer.cs",
-              "ToolTip": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\BusinessLayer\\Base\\CalendarBusinessLayer.cs",
-              "RelativeToolTip": "LIBCORE\\BusinessLayer\\Base\\CalendarBusinessLayer.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAwwD8AAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T16:14:22.598Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "EmailService.cs",
-              "DocumentMoniker": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\Helper\\EmailService.cs",
-              "RelativeDocumentMoniker": "LIBCORE\\Helper\\EmailService.cs",
-              "ToolTip": "C:\\Football-Team-Dev\\Backend\\HTML_FC\\LIBCORE\\Helper\\EmailService.cs",
-              "RelativeToolTip": "LIBCORE\\Helper\\EmailService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAABXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T16:24:43.744Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-18T13:56:17.911Z"
             }
           ]
         }

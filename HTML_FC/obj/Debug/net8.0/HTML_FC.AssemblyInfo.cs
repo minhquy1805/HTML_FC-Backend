@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HTML_FC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+55a57d3d5bebdacf9951ba8cb5ebe342499b309a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+67d0d25a0b18e9e270cf8a608492dc32f4c3485c")]
 [assembly: System.Reflection.AssemblyProductAttribute("HTML_FC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HTML_FC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
